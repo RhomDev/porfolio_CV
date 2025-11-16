@@ -227,3 +227,91 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+(function(){
+  // Projects shortcut behavior: support touch/click, ESC to close, outside click
+  const btn = document.getElementById('projectsShortcut');
+  const popup = document.getElementById('projectsPopup');
+
+  if (!btn || !popup) return;
+
+  // toggle on click (useful for touch)
+  btn.addEventListener('click', (e) => {
+    const isShown = popup.classList.toggle('show');
+    btn.setAttribute('aria-expanded', String(isShown));
+    e.stopPropagation();
+  });
+
+  // keep open on popup interaction
+  popup.addEventListener('click', (e) => { e.stopPropagation(); });
+
+  // close on outside click
+  document.addEventListener('click', () => {
+    if (popup.classList.contains('show')){
+      popup.classList.remove('show');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // close on ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup.classList.contains('show')){
+      popup.classList.remove('show');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.focus();
+    }
+  });
+
+  // optional: open with keyboard 'p' (uncomment if wanted)
+  // document.addEventListener('keydown', (e) => { if (e.key === 'p') btn.click(); });
+
+})();
+(function(){
+  // Projects dropdown interaction
+  const dropdowns = document.querySelectorAll('.projects-dropdown .dropdown');
+
+  if (dropdowns.length === 0) return;
+
+  // Toggle a dropdown on click (useful for touch)
+  dropdowns.forEach(dd => {
+    const toggle = dd.querySelector('.dropdown-toggle');
+    if (!toggle) return;
+
+    // click to toggle
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = dd.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      // close others
+      dropdowns.forEach(other => { if (other !== dd) { other.classList.remove('open'); other.querySelector('.dropdown-toggle')?.setAttribute('aria-expanded','false'); }});
+      e.stopPropagation();
+    });
+
+    // allow opening nested dropdowns by click on their toggles
+    const nestedToggles = dd.querySelectorAll('.dropdown > .dropdown-toggle');
+    nestedToggles.forEach(nt => {
+      nt.addEventListener('click', (e) => {
+        e.preventDefault();
+        const parent = nt.parentElement;
+        parent.classList.toggle('open');
+        e.stopPropagation();
+      });
+    });
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    dropdowns.forEach(dd => {
+      if (dd.classList.contains('open')) dd.classList.remove('open');
+      const t = dd.querySelector('.dropdown-toggle');
+      if (t) t.setAttribute('aria-expanded','false');
+    });
+  });
+
+  // Close on ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      dropdowns.forEach(dd => dd.classList.remove('open'));
+    }
+  });
+
+})();

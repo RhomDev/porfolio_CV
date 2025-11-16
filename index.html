@@ -59,11 +59,32 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Accueil</a></li>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i> Accueil</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> Profil</a></li>
         <li><a href="#etude"><i class="bi bi-file-earmark-text navicon"></i> Etude</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Expérience Professionel</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
+        <li><a href="#resume"><i class="bi bi-briefcase navicon"></i> Expérience Professionel</a></li>
+
+        <li class="dropdown">
+          <a href="#"><i class="bi bi-images navicon"></i> Projects <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="projects/concour-fanuc.html">Concours FANUC</a></li>
+            <li><a href="projects/concour-olympiade-fanuc.html">Concours Olympiade FANUC</a></li>
+
+            <li class="dropdown">
+              <a href="#">Robots <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="projects/robot-suiveur-ligne.html">Robot suiveur de ligne</a></li>
+                <li><a href="projects/mini-robot-humanoide.html">Mini robot humanoïde</a></li>
+                <li><a href="projects/robot-humanoide.html">Robot humanoïde</a></li>
+              </ul>
+            </li>
+
+            <li><a href="projects/maintenance-moteur-vr.html">Maintenance moteur (VR)</a></li>
+            <li><a href="projects/renovation-maquette-machine.html">Rénovation maquette machine</a></li>
+            <li><a href="projects/maquette-tourelle-balistique.html">Maquette tourelle balistique</a></li>
+            <li><a href="projects/recycleur-plastique-3d.html">Recycleur plastique + impression 3D</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
 
@@ -266,14 +287,16 @@
               <h4>Licence Science Pour l'Ingénieur</h4>
               <h5>2024-2025</h5>
               <p><em>Parcour mécatronique</em></p>
-              <p>blabla</p>
+              <p class="text-indent">Durant cette année, j'ai consolidé mes compétences en électronique (analogique et numérique), capteurs et actionneurs, automatisme industriel. J'ai mené des projets intégrant conception de cartes (uniquement sur banc de test), asservissements et interfaces utilisateur simples, et utilisé des outils de CAO et de mesure. Cette formation m'a également permis de développer mon sens du travail en équipe, ma rigueur expérimentale et la rédaction de documents techniques.</p>
+              <p> Grâce au parcours mécatronique, j’ai pu confirmant ainsi mes envies de poursuivre mes études dans ce domaine.</p>
             </div>
 
             <div class="resume-item">
-              <h4>DUT Génie Electronique et Informatique Industriel</h4>
-              <h5>2022-2024</h5>
-              <p><em>Parcour Automatisme et Informatique Industriel</em></p>
-              <p>blabla</p>
+                <h4>DUT Génie Electronique et Informatique Industriel</h4>
+                <h5>2022-2024</h5>
+                <p><em>Parcour Automatisme et Informatique Industriel</em></p>
+                <p class="text-indent">Durant ce DUT, j'ai consolidé des compétences pratiques en électronique et en électronique de puissance, en asservissements et en automatisme industriel. J'ai programmé et testé des automates, développé des applications sur systèmes embarqués (C/C++), réalisé des schémas et des montages, et effectué des mesures avec oscilloscope et multimètre. Les travaux pratiques et projets m'ont aussi familiarisé avec les réseaux industriels (Modbus, Ethernet industriel), la mise en service, le diagnostic et la rédaction de documentations techniques, tout en renforçant mon sens du travail en équipe et le respect des règles de sécurité électrique.</p>
+                <p> J’ai pu acquérir de nombreuses compétences en électronique et automatisme, ce qui par ailleurs suscita mon intérêt plus tard pour la mécatronique. Par la même occasion, ma participation au concours FANUC m’a permis de concrétiser mon expérience de la mécatronique.</p>
             </div>
 
           </div>
@@ -403,78 +426,110 @@
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
             <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <h4 class="title"><a href="projects/concour-fanuc.html" class="stretched-link">Concours FANUC</a></h4>
+              <p class="description">Présentation du projet Concours FANUC.</p>
             </div>
-          </div>
-          <!-- End Service Item -->
+          </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
             <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+              <h4 class="title"><a href="projects/concour-olympiade-fanuc.html" class="stretched-link">Concours Olympiade FANUC</a></h4>
+              <p class="description">Résumé court du concours olympiade FANUC.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
+            <div class="icon flex-shrink-0"><i class="bi bi-robot"></i></div>
             <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+              <h4 class="title"><a href="projects/robot-suiveur-ligne.html" class="stretched-link">Robot suiveur de ligne</a></h4>
+              <p class="description">Robot autonome suiveur de trajectoire — capteurs et asservissements.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
             <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
             <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <h4 class="title"><a href="projects/maintenance-moteur-vr.html" class="stretched-link">Maintenance de moteur (VR)</a></h4>
+              <p class="description">Expérience maintenance / simulation VR du fonctionnement moteur.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
             <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
             <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+              <h4 class="title"><a href="projects/renovation-maquette-machine.html" class="stretched-link">Rénovation maquette machine industrielle</a></h4>
+              <p class="description">Rénovation et modernisation d'une maquette de machine.</p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
             <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
             <div>
-              <h4 class="title"><a href="service-details.html" class="stretched-link">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+              <h4 class="title"><a href="projects/maquette-tourelle-balistique.html" class="stretched-link">Maquette tourelle balistique</a></h4>
+              <p class="description">Prototype et contrôle d'une tourelle balistique en maquette.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-robot"></i></div>
+            <div>
+              <h4 class="title"><a href="projects/mini-robot-humanoide.html" class="stretched-link">Mini robot humanoïde</a></h4>
+              <p class="description">Mini humanoïde : mécatronique, servo, et contrôle.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-arrow-repeat"></i></div>
+            <div>
+              <h4 class="title"><a href="projects/recycleur-plastique-3d.html" class="stretched-link">Recycleur plastique + impression 3D</a></h4>
+              <p class="description">Système de recyclage et réimpression filament 3D.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-robot"></i></div>
+            <div>
+              <h4 class="title"><a href="projects/robot-humanoide.html" class="stretched-link">Robot humanoïde</a></h4>
+              <p class="description">Projet complet robot humanoïde — asservissement et IA embarquée.</p>
             </div>
           </div><!-- End Service Item -->
 
         </div>
 
       </div>
-
     </section><!-- /Services Section -->
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
 
 
   </main>
 
+  <!-- Projects dropdown (fixed at right) -->
+  <ul class="projects-dropdown" id="projectsDropdown" aria-label="Projets">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" id="projectsToggle" aria-haspopup="true" aria-expanded="false">
+        <i class="bi bi-images"></i>
+      </a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="projectsToggle">
+        <li><a href="projects/concour-fanuc.html">Concours FANUC</a></li>
+        <li><a href="projects/concour-olympiade-fanuc.html">Concours Olympiade FANUC</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Robots <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="projects/robot-suiveur-ligne.html">Robot suiveur de ligne</a></li>
+            <li><a href="projects/mini-robot-humanoide.html">Mini robot humanoïde</a></li>
+            <li><a href="projects/robot-humanoide.html">Robot humanoïde</a></li>
+          </ul>
+        </li>
+        <li><a href="projects/maintenance-moteur-vr.html">Maintenance moteur (VR)</a></li>
+        <li><a href="projects/renovation-maquette-machine.html">Rénovation maquette machine</a></li>
+        <li><a href="projects/maquette-tourelle-balistique.html">Maquette tourelle balistique</a></li>
+        <li><a href="projects/recycleur-plastique-3d.html">Recycleur plastique + impression 3D</a></li>
+      </ul>
+    </li>
+  </ul>
+  <!-- End projects dropdown -->
+  
   <footer id="footer" class="footer position-relative light-background">
-
     <div class="container">
       <div class="copyright text-center ">
         <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
@@ -487,7 +542,6 @@
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
       </div>
     </div>
-
   </footer>
 
   <!-- Scroll Top -->

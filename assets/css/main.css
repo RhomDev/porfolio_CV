@@ -1273,3 +1273,160 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+.text-indent {
+  text-indent: 1.2em; /* change la valeur pour ajuster l'espace */
+  /* optionnel : conserver l'alignement et l'espacement normal */
+  margin: 0 0 1rem 0;
+}
+
+/* fixed right shortcut button */
+.projects-shortcut{
+  position: fixed;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1080;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* popup list under the button */
+.projects-popup{
+  position: fixed;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%) translateY(60px); /* appears below the button */
+  z-index: 1079;
+  width: 260px;
+  max-width: calc(100vw - 2rem);
+  background: var(--bs-body-bg, #fff);
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  padding: .5rem;
+  display: none;
+  transition: opacity .18s ease, transform .18s ease;
+  opacity: 0;
+}
+
+/* show on hover or focus */
+.projects-shortcut:hover + .projects-popup,
+.projects-shortcut:focus + .projects-popup,
+.projects-popup:hover,
+.projects-popup.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(-50%) translateY(8px);
+}
+
+/* list styling */
+.projects-list li { padding: .35rem 0; }
+.projects-list li + li { border-top: 1px solid rgba(0,0,0,0.06); }
+.projects-list a {
+  color: var(--bs-body-color, #111);
+  text-decoration: none;
+  display: block;
+  padding: .2rem .25rem;
+  border-radius: 4px;
+}
+.projects-list a:hover, .projects-list a:focus {
+  background: rgba(0,0,0,0.03);
+  text-decoration: none;
+}
+/* small-screen tweak */
+@media (max-width: 576px){
+  .projects-popup{ right: .5rem; left: .5rem; width: auto; transform: translateY(-50%) translateY(72px); }
+}
+
+/* Projects dropdown fixed at right */
+.projects-dropdown{
+  position: fixed;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1080;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+.projects-dropdown .dropdown > a.dropdown-toggle{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: var(--bs-primary);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  border: none;
+}
+
+/* top-level menu */
+.projects-dropdown .dropdown .dropdown-menu{
+  display: none;
+  position: absolute;
+  right: 56px; /* place menu to the left of the button */
+  top: 0;
+  transform: translateY(-6px);
+  min-width: 260px;
+  background: var(--bs-body-bg, #fff);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  padding: .4rem;
+  list-style: none;
+  margin: 0;
+}
+
+/* nested dropdowns */
+.projects-dropdown .dropdown .dropdown > .dropdown-menu{
+  right: 100%;
+  top: 0;
+  transform: translateX(-6px);
+}
+
+/* item styles */
+.projects-dropdown .dropdown-menu li { padding: .25rem 0; }
+.projects-dropdown .dropdown-menu a{
+  display: block;
+  padding: .45rem .6rem;
+  color: var(--bs-body-color, #111);
+  text-decoration: none;
+  border-radius: 6px;
+}
+.projects-dropdown .dropdown-menu a:hover,
+.projects-dropdown .dropdown-menu a:focus{
+  background: rgba(0,0,0,0.04);
+}
+
+/* show on hover */
+.projects-dropdown .dropdown:hover > .dropdown-menu,
+.projects-dropdown .dropdown .dropdown:hover > .dropdown-menu {
+  display: block;
+  animation: slideIn .12s ease;
+}
+
+/* show when explicit .open class set by JS (for touch/click) */
+.projects-dropdown .dropdown.open > .dropdown-menu { display: block; }
+
+/* chevron small */
+.toggle-dropdown { margin-left: .35rem; font-size: .85rem; }
+
+/* small screens: make menu full width and below the button */
+@media (max-width: 576px){
+  .projects-dropdown{ right: .5rem; top: auto; bottom: 1.25rem; transform:none; display:flex; gap:.5rem; }
+  .projects-dropdown .dropdown .dropdown-menu { position: fixed; right: .5rem; bottom: 4.5rem; transform:none; width: calc(100% - 1rem); max-width: 420px; }
+}
+
+/* animation */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

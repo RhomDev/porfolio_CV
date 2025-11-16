@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projet — Romaric Pradeau</title>
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+</head>
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="../assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+    <a href="../index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Romaric Pradeau</h1>
+    </a>
+    <div class="social-links text-center">
+      <a href="https://www.facebook.com/share/14Li6wpQQL6/" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/pradeau.romaric/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/romaric-pradeau-095abb2a2" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="../index.html#hero"><i class="bi bi-house navicon"></i>Accueil</a></li>
+        <li><a href="../index.html#about"><i class="bi bi-person navicon"></i>Profil</a></li>
+        <li><a href="../index.html#etude"><i class="bi bi-file-earmark-text navicon"></i>Etude</a></li>
+        <li><a href="../index.html#resume"><i class="bi bi-file-earmark-text navicon"></i>Expérience</a></li>
+        <li><a href="../index.html#portfolio" class="active"><i class="bi bi-images navicon"></i>Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <a href="../index.html#portfolio" class="btn btn-outline-secondary">← Retour aux projects</a>
+      <a href="#details" class="btn btn-primary">Aller au détail</a>
+    </div>
+
+    <header class="mb-4">
+      <h1 id="title">Titre du projet</h1>
+      <p class="lead" id="subtitle">Résumé court du projet (2–3 phrases).</p>
+    </header>
+
+    <section id="details">
+      <div class="row">
+        <div class="col-lg-8">
+          <h3>Contexte</h3>
+          <p id="contexte">Décris le contexte, le but et l'équipe.</p>
+
+          <h3>Réalisation</h3>
+          <p id="realisation">Explique ce que tu as fait: tâches, méthodes, résultats.</p>
+        </div>
+
+        <aside class="col-lg-4">
+          <h3>Compétences & technologies</h3>
+          <ul id="techs">
+            <li>Automatisme / PLC</li>
+            <li>Programmation embarquée (C/C++)</li>
+            <li>Électronique : capteurs, actionneurs</li>
+            <li>CAO, mesure et tests</li>
+          </ul>
+
+          <h3>Liens</h3>
+          <ul>
+            <li><a href="#" id="github">Repo GitHub</a></li>
+            <li><a href="#" id="pdf">Fiche PDF / rapport</a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <h3 class="mt-4">Galerie</h3>
+      <div class="row g-3" id="gallery">
+        <!-- place images dans ../assets/img/projects/ et insère ici -->
+        <div class="col-md-6">
+          <img src="../assets/img/projects/example-1.jpg" class="img-fluid rounded" alt="">
+        </div>
+        <div class="col-md-6">
+          <img src="../assets/img/projects/example-2.jpg" class="img-fluid rounded" alt="">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Projects shortcut (fixed at right) + offcanvas list (same as index) -->
+  <button class="btn btn-primary projects-shortcut" type="button" data-bs-toggle="offcanvas" data-bs-target="#projectsSidebar" aria-controls="projectsSidebar" title="Projets">
+    <i class="bi bi-images"></i>
+  </button>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="projectsSidebar" aria-labelledby="projectsSidebarLabel">
+    <div class="offcanvas-header">
+      <h5 id="projectsSidebarLabel">Projets</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="list-unstyled">
+        <li><a href="concour-fanuc.html">Concours FANUC</a></li>
+        <li><a href="concour-olympiade-fanuc.html">Concours Olympiade FANUC</a></li>
+        <li><a href="robot-suiveur-ligne.html">Robot suiveur de ligne</a></li>
+        <li><a href="maintenance-moteur-vr.html">Maintenance moteur (VR)</a></li>
+        <li><a href="renovation-maquette-machine.html">Rénovation maquette machine</a></li>
+        <li><a href="maquette-tourelle-balistique.html">Maquette tourelle balistique</a></li>
+        <li><a href="mini-robot-humanoide.html">Mini robot humanoïde</a></li>
+        <li><a href="recycleur-plastique-3d.html">Recycleur plastique + impression 3D</a></li>
+        <li><a href="robot-humanoide.html">Robot humanoïde</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- End projects shortcut -->
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Romaric Pradeau</span></p>
+      </div>
+      <div class="credits text-center">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
