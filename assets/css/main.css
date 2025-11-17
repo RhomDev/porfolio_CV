@@ -1505,9 +1505,3 @@ section#about .content h2 { margin-bottom: 0.35rem; }
   .projects-dropdown{ right: .5rem; top: auto; bottom: 1.25rem; transform:none; display:flex; gap:.5rem; }
   .projects-dropdown .dropdown .dropdown-menu { position: fixed; right: .5rem; bottom: 4.5rem; transform:none; width: calc(100% - 1rem); max-width: 420px; }
 }
-
-/* animation */
-@keyframes slideIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
