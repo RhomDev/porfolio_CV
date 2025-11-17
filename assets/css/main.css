@@ -648,6 +648,87 @@ section,
   line-height: 0;
 }
 
+/* CV-style lists */
+.cv-list { list-style: none; padding: 0; margin: 0 0 0.5rem 0; }
+.cv-list li { padding: 0.15rem 0; color: var(--bs-body-color, #222); }
+.cv-skills h5 { margin-bottom: 0.35rem; font-weight: 600; }
+.cv-skills .cv-list { margin-bottom: 0.6rem; }
+
+/* small visual tweak for About heading */
+section#about .content h2 { margin-bottom: 0.35rem; }
+
+/* About card (grey background, framed photo, professional look) */
+.about-card{
+  position: relative;              /* permet position absolute de la photo */
+  background: #f5f6f8;
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem 1rem 1.25rem;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.06);
+  gap: 1.25rem;
+  overflow: visible;
+  /* laisser de l'espace à gauche pour la photo (ajustable) */
+  padding-left: 250px;
+}
+
+/* framed circular photo positioned top-left inside the card */
+.profile-frame{
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 214px;   /* taille totale du cadre */
+  height: 214px;
+  padding: 8px;
+  border-radius: 14px;
+  background: linear-gradient(180deg,#fff,#f0f2f5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(12,20,30,0.06);
+  z-index: 5;
+}
+
+.profile-frame img{
+  width: 196px;
+  height: 196px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+}
+
+/* ensure content sits nicely when photo is absolute */
+.about-card .content{
+  padding: 0;
+  margin: 0;
+}
+
+/* responsive: on smaller screens, stack vertically and reduce image */
+@media (max-width: 991px){
+  .about-card{
+    position: relative;
+    padding-left: 1rem; /* pas d'espace à gauche sur mobile */
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-frame{
+    position: static;
+    margin: 0 auto;
+    width: 160px;
+    height: 160px;
+    padding: 6px;
+  }
+  .profile-frame img{
+    width: 144px;
+    height: 144px;
+  }
+  .about-card .content{ margin-top: .6rem; }
+}
+
+/* optional: subtle hover lift on photo */
+.profile-frame:hover{
+  transform: translateY(-4px);
+  transition: transform .18s ease;
+}
+
 /*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
