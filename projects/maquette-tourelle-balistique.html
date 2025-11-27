@@ -53,10 +53,64 @@
       <div class="row">
         <div class="col-lg-8">
           <h3>Contexte</h3>
-          <p id="contexte">Décris le contexte, le but et l'équipe.</p>
+          <p id="contexte">
+            Dans le cadre de ce projet, nous avons conçu et réalisé une maquette de tourelle balistique à visée automatique.
+            L'objectif était de détecter une cible prédéfinie grâce à la vision artificielle, d'orienter une plateforme motorisée
+            (pan &amp; tilt) vers cette cible, puis de déclencher le mécanisme de lancement d'un projectile. Le système devait fonctionner
+            de manière autonome et fiable en combinant mécanique, électronique et algorithmie.
+          </p>
 
-          <h3>Réalisation</h3>
-          <p id="realisation">Explique ce que tu as fait: tâches, méthodes, résultats.</p>
+          <h3>Objectifs</h3>
+          <ul>
+            <li>Détecter et localiser une cible connue à l'aide d'une caméra et d'un algorithme de vision.</li>
+            <li>Orienter précisément la plateforme pan &amp; tilt pour assurer la visée sur l'axe horizontal et vertical.</li>
+            <li>Concevoir un système de propulsion (ressort) et une commande qui permettent le lancement reproductible d'un projectile.</li>
+            <li>Assurer la synchronisation entre détection, orientation et déclenchement pour un fonctionnement autonome.</li>
+          </ul>
+
+          <h3>Architecture fonctionnelle</h3>
+          <p>
+            Le système s'articule autour de trois blocs principaux : la mécanique (plateforme et système de propulsion),
+            l'électronique (carte de puissance, drivers moteurs, microcontrôleur) et la partie logicielle (acquisition vidéo,
+            détection de la cible et contrôle des moteurs). Ci‑dessous, le diagramme fonctionnel du système.
+          </p>
+
+          <figure class="mb-3">
+            <img src="../assets/img/projects/tourelle-diagramme.png" alt="Diagramme fonctionnel de la tourelle : détection, calcul de position, contrôle moteurs, pan & tilt et système de propulsion" class="img-fluid rounded">
+            <figcaption class="text-muted small mt-2">Diagramme fonctionnel — décomposition des fonctions d'usage, fonctions techniques et solutions techniques.</figcaption>
+          </figure>
+
+          <h3>Conception mécanique</h3>
+          <p>
+            La plateforme Pan &amp; Tilt a été dimensionnée pour offrir la précision et la robustesse nécessaires à la visée.
+            Les assemblages privilégient la rigidité et la répétabilité des positions. Le mécanisme de propulsion utilise un système à ressort
+            avec verrouillage mécanique, conçu pour un déclenchement contrôlé et sûr.
+          </p>
+
+          <h3>Électronique</h3>
+          <p>
+            La carte électronique intègre la gestion de la puissance pour les moteurs (drivers adaptés au couple requis),
+            l'alimentation, et l'interface avec un microcontrôleur (Arduino) chargé de la commande temps réel.
+            Les capteurs (fin de course, retour d'encodeur) et l'acquisition caméra sont câblés pour assurer sécurité et supervision.
+          </p>
+
+          <h3>Programmation et vision</h3>
+          <p>
+            La détection de la cible repose sur un traitement d'images (OpenCV) capable d'identifier l'objet connu et d'en estimer l'azimut et l'élévation.
+            Un contrôleur pilote les moteurs en boucle fermée pour atteindre la position demandée ; la logique de supervision synchronise
+            la détection, l'orientation et le tir. Des routines de filtrage et de validation évitent les déclenchements sur détections erronées.
+          </p>
+
+          <h3>Tests, résultats et perspectives</h3>
+          <p>
+            Lors des essais, nous avons évalué la précision angulaire, le temps de verrouillage de la cible et la répétabilité des lancers.
+            Les résultats montrent une visée robuste pour des cibles statiques dans l'aire de travail définie. Pour la suite, des améliorations
+            possibles : optimisation de l'algorithme de vision pour cibles en mouvement, réduction du temps de réaction, ajout d'encodeurs de haute résolution,
+            et sécurisation accrue du mécanisme de propulsion.
+          </p>
+          <p>
+            Équipe : 3 étudiants — responsabilités partagées sur la mécanique, l'électronique et le développement logiciel. Documentation et rapport disponibles en téléchargement.
+          </p>
         </div>
 
         <aside class="col-lg-4">
@@ -71,7 +125,7 @@
           <h3>Liens</h3>
           <ul>
             <li><a href="#" id="github">Repo GitHub</a></li>
-            <li><a href="#" id="pdf">Fiche PDF / rapport</a></li>
+            <li><a href="../assets/Rapport_TS.pdf" download="Rapport_TS.pdf" target="_blank" rel="noopener">Télécharger le rapport (PDF)</a></li>
           </ul>
         </aside>
       </div>
@@ -102,7 +156,7 @@
     <div class="offcanvas-body">
       <ul class="list-unstyled">
         <li><a href="concour-fanuc.html">Concours FANUC</a></li>
-        <li><a href="concour-olympiade-fanuc.html">Concours Olympiade FANUC</a></li>
+        <li><a href="concour-olympiade-physique.html">Concours Olympiade Physique</a></li>
         <li><a href="robot-suiveur-ligne.html">Robot suiveur de ligne</a></li>
         <li><a href="maintenance-moteur-vr.html">Maintenance moteur (VR)</a></li>
         <li><a href="renovation-maquette-machine.html">Rénovation maquette machine</a></li>
