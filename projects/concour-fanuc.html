@@ -61,31 +61,56 @@
   <main class="main container py-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
       <a href="../index.html#portfolio" class="btn btn-outline-secondary">← Retour aux projects</a>
-      <a href="#details" class="btn btn-primary">Aller au détail</a>
     </div>
 
-    <header class="mb-4">
-      <h1 id="title">Concours FANUC</h1>
-      <p class="lead" id="subtitle">Résumé court du projet (2–3 phrases).</p>
+    <header class="mb-4" style="background-image: url('../assets/img/projects/fanuc/robot-bg.jpg'); background-size: cover; background-position: center; position: relative; padding: 100px 20px; border-radius: 8px; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); border-radius: 8px;"></div>
+      <h1 id="title" style="position: relative; z-index: 1; color: white; text-align: center; margin: 0;">Concours FANUC</h1>
     </header>
 
     <section id="details">
       <div class="row">
         <div class="col-lg-8">
           <h3>Contexte</h3>
-          <p id="contexte">Décris le contexte, le but et l'équipe.</p>
+          <p class="text-indent" id="contexte">Dans le cadre d’une compétition technique organisée par Fanuc, leader mondial de la robotique et des commandes numériques (CNC), j'ai conçu et programmé le système de pilotage d'une sertisseuse de cadres de fenêtres.
+
+L'enjeu était de créer un programme capable de gérer un cycle industriel complet, de l'amenage du cadre jusqu'à son éjection, tout en garantissant une sécurité et une flexibilité d'utilisation optimale pour l'opérateur.</p>
+
+          <h3>Presentation</h3>
+          <p class="text-indent" id="presentation">Le cœur du projet repose sur une architecture de programmation à deux niveaux, alliant précision numérique et logique séquentielle:
+
+    Le Pilotage ISO (G-Code) : Utilisé pour la mise en forme du système et la gestion de la trajectoire du bloc outil en fonction des dimensions de la fenêtre.
+
+    La Logique Ladder : Une série de sous-programmes gérant les entrées/sorties physiques (capteurs, vérins, tapis roulants) et la sécurité du système.
+
+    L'Interface Homme-Machine (IHM) : Le système intègre trois modes de fonctionnement pour répondre à tous les besoins industriels : Automatique (productivité), Semi-automatique (réglages et maintenance) et Manuel (pilotage individuel des actionneurs).</p>
 
           <h3>Réalisation</h3>
-          <p id="realisation">Explique ce que tu as fait: tâches, méthodes, résultats.</p>
-        </div>
+                <p class="text-indent" id="realisation">Pour assurer la fiabilité de la machine, le programme suit une séquence logique rigoureuse :
 
+          Préparation et Positionnement : Après activation (bouton DCY), le système calcule les dimensions du cadre (division par 2 pour le travail sur demi-machine) et positionne le bloc outil via des fonctions de déplacement G01.
+
+          Sertissage et Maintien : Le cadre est acheminé par des tapis roulants, détecté par capteur, puis bridé par des vérins verticaux. Une temporisation de 5 secondes (G04 F5) assure la stabilisation du sertissage.
+
+          Éjection et Retour : Une fois l'opération terminée, les pinces se libèrent et les tapis remontent pour évacuer le cadre et libérer l'espace pour le cycle suivant.
+
+          Gestion des LEDs et Retours d'état : Chaque action est signalée à l'opérateur par un système de LEDs (clignotantes durant l'action, fixes une fois l'étape terminée), facilitant le diagnostic en temps réel.</p>
+          <h3>Résultats</h3>
+          <p class="text-indent" id="resultats">Le projet a abouti et nous a remporté la 6e prix de la compétition FANUC, soulignant l'efficacité et l'innovation de notre solution et notre travail en équipe. Ce succès a renforcé notre expertise en automatisation industrielle et en programmation de systèmes robotiques avancés.</p>
+        </div>
+          
         <aside class="col-lg-4">
           <h3>Compétences & technologies</h3>
           <ul id="techs">
-            <li>Automatisme / PLC</li>
-            <li>Programmation embarquée (C/C++)</li>
-            <li>Électronique : capteurs, actionneurs</li>
-            <li>CAO, mesure et tests</li>
+            <li> Programmation Commande Numérique (CNC)</li>
+            <li>Automatisme Industriel</li>
+            <li>Architecture de Contrôle / Gestion des Modes Opératoires </li>
+            <li>Logique de Sécurité et Auto-maintien  / Traitement de Données Capteurs </li>
+            <li>Matériel : Automates et CNC FANUC.</li>
+            <li>Langages de programmation (ISO / G-Code, Ladder Logic)</li>
+            <li>Analyse de processus</li>
+            <li>Maintenance & Diagnostic</li>
+            <li>Rigueur Opérationnelle</li>
           </ul>
 
           <h3>Liens</h3>
@@ -98,12 +123,23 @@
 
       <h3 class="mt-4">Galerie</h3>
       <div class="row g-3" id="gallery">
-        <!-- place images dans ../assets/img/projects/ et insère ici -->
         <div class="col-md-6">
-          <img src="../assets/img/projects/example-1.jpg" class="img-fluid rounded" alt="">
+          <img src="../assets/img/projects/fanuc/IMG_2876.JPG" class="img-fluid rounded" alt="">
         </div>
         <div class="col-md-6">
-          <img src="../assets/img/projects/example-2.jpg" class="img-fluid rounded" alt="">
+          <img src="../assets/img/projects/fanuc/IMG_2883.JPG" class="img-fluid rounded" alt="">
+        </div>
+        <div class="col-md-6">
+          <img src="../assets/img/projects/fanuc/IMG_2895.JPG" class="img-fluid rounded" alt="">
+        </div>
+        <div class="col-md-6">
+          <img src="../assets/img/projects/fanuc/IMG_2934.JPG" class="img-fluid rounded" alt="">
+        </div>
+        <div class="col-md-6">
+          <img src="../assets/img/projects/fanuc/IMG_2960.JPG" class="img-fluid rounded" alt="">
+        </div>
+        <div class="col-md-6">
+          <img src="../assets/img/projects/fanuc/IMG_2990.JPG" class="img-fluid rounded" alt="">
         </div>
       </div>
     </section>
