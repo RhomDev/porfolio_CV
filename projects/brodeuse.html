@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Projet — Romaric Pradeau</title>
+  <title>Brodeuse Numérique CNC — Romaric Pradeau</title>
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
@@ -16,7 +16,7 @@
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
     <div class="profile-img">
-      <img src="../assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+      <img src="../assets/img/my-profile-img.jpg" alt="Romaric Pradeau" class="img-fluid rounded-circle">
     </div>
     <a href="../index.html" class="logo d-flex align-items-center justify-content-center">
       <h1 class="sitename">Romaric Pradeau</h1>
@@ -44,51 +44,67 @@
     </div>
 
     <header class="mb-4">
-      <h1 id="title">Titre du projet</h1>
-      <p class="lead" id="subtitle">Résumé court du projet (2–3 phrases).</p>
+      <h1 id="title">Projet de Synthèse — Brodeuse Numérique CNC</h1>
+      <p class="lead" id="subtitle">Transformation et rétrofit d'une machine à coudre mécanique en brodeuse à commande numérique (CNC) 2 axes, avec synchronisation électronique temps réel.</p>
     </header>
 
     <section id="details">
       <div class="row">
         <div class="col-lg-8">
           <h3>Contexte</h3>
-          <p id="contexte">Décris le contexte, le but et l'équipe.</p>
+          <p id="contexte">
+            Ce projet de synthèse, réalisé en collaboration avec Maé Tazzioli, visait à transformer une machine à coudre mécanique classique en une véritable brodeuse numérique automatisée. L'enjeu principal était de concevoir un système mécatronique complet, capable de synchroniser avec une très haute précision le déplacement 2 axes (X/Y) d'un cadre de broderie textile avec la cinématique rapide de l'aiguille de la machine.
+          </p>
 
           <h3>Réalisation</h3>
-          <p id="realisation">Explique ce que tu as fait: tâches, méthodes, résultats.</p>
+          <p id="realisation">
+            Le projet a exigé une approche hautement multidisciplinaire :
+            <br><br>
+            <strong>Mécanique :</strong> Conception d'un plateau XY guidé par des rails linéaires et entraîné par des courroies crantées GT2 pour assurer la fluidité du déplacement du cadre de broderie.
+            <br><br>
+            <strong>Électronique & Puissance :</strong> Le pilotage des moteurs pas-à-pas est assuré par une carte MKS Base V1.4 (ATmega2560). La vitesse du moteur secteur 230V de la machine est régulée par découpe de phase via un module variateur AC isolé optiquement.
+            <br><br>
+            <strong>Acquisition & Synchronisation :</strong> La synchronisation critique avec la position haute de l'aiguille est gérée par une détection optique infrarouge (H21A1) ultra-rapide, conditionnée par une carte comparatrice AOP (LM741) conçue sur mesure.
+            <br><br>
+            <strong>Logiciel :</strong> Développement d'un pipeline complet en Python pour la vectorisation des motifs, la génération de G-code spécialisé et l'envoi des commandes en streaming série temps réel vers le firmware de la carte.
+            <br><br>
+            L'intégralité de la documentation, de la CAO aux notes de calcul, a été architecturée de manière pérenne et modulaire dans un coffre de connaissances dynamique sous Obsidian.
+          </p>
         </div>
 
         <aside class="col-lg-4">
           <h3>Compétences & technologies</h3>
           <ul id="techs">
-            <li>Automatisme / PLC</li>
-            <li>Programmation embarquée (C/C++)</li>
-            <li>Électronique : capteurs, actionneurs</li>
-            <li>CAO, mesure et tests</li>
+            <li>Mécatronique (Plateau XY, cinématique)</li>
+            <li>Électronique de puissance (Variateur AC, AOP)</li>
+            <li>Programmation embarquée (C/C++, ATmega2560)</li>
+            <li>Pipeline logiciel Python (Vectorisation, G-code)</li>
+            <li>Documentation structurée (Obsidian)</li>
           </ul>
 
           <h3>Liens</h3>
           <ul>
-            <li><a href="#" id="github">Repo GitHub</a></li>
-            <li><a href="#" id="pdf">Fiche PDF / rapport</a></li>
+            <!-- N'oublie pas de remplacer les '#' par tes vrais liens GitHub / Google Drive etc. -->
+            <li><a href="#" id="github"><i class="bi bi-github"></i> Dépôt GitHub du projet</a></li>
+            <li><a href="#" id="pdf"><i class="bi bi-file-earmark-pdf"></i> Rapport académique</a></li>
           </ul>
         </aside>
       </div>
 
       <h3 class="mt-4">Galerie</h3>
       <div class="row g-3" id="gallery">
-        <!-- place images dans ../assets/img/projects/ et insère ici -->
+        <!-- Place tes images dans ../assets/img/projects/ et insère-les ici -->
         <div class="col-md-6">
-          <img src="../assets/img/projects/example-1.jpg" class="img-fluid rounded" alt="">
+          <img src="../assets/img/projects/brodeuse-1.jpg" class="img-fluid rounded shadow-sm" alt="Mécanique du plateau XY de la brodeuse">
         </div>
         <div class="col-md-6">
-          <img src="../assets/img/projects/example-2.jpg" class="img-fluid rounded" alt="">
+          <img src="../assets/img/projects/brodeuse-2.jpg" class="img-fluid rounded shadow-sm" alt="Carte électronique et conditionnement capteur optique">
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Projects shortcut (fixed at right) + offcanvas list (same as index) -->
+  <!-- Projects shortcut (fixed at right) + offcanvas list -->
   <button class="btn btn-primary projects-shortcut" type="button" data-bs-toggle="offcanvas" data-bs-target="#projectsSidebar" aria-controls="projectsSidebar" title="Projets">
     <i class="bi bi-images"></i>
   </button>
@@ -101,14 +117,14 @@
     <div class="offcanvas-body">
       <ul class="list-unstyled">
         <li><a href="concour-fanuc.html">Concours FANUC</a></li>
-        <li><a href="concour-olympiade-fanuc.html">Concours Olympiade FANUC</a></li>
+        <li><a href="concour-olympiade-physique.html">Concours Olympiade de Physique</a></li>
         <li><a href="robot-suiveur-ligne.html">Robot suiveur de ligne</a></li>
         <li><a href="maintenance-moteur-vr.html">Maintenance moteur (VR)</a></li>
         <li><a href="renovation-maquette-machine.html">Rénovation maquette machine</a></li>
         <li><a href="maquette-tourelle-balistique.html">Maquette tourelle balistique</a></li>
         <li><a href="mini-robot-humanoide.html">Mini robot humanoïde</a></li>
-        <li><a href="recycleur-plastique-3d.html">Recycleur plastique + impression 3D</a></li>
         <li><a href="robot-humanoide.html">Robot humanoïde</a></li>
+        <li><a href="pipeline-VGGT.html">Pipeline VGGT</a></li>
       </ul>
     </div>
   </div>
