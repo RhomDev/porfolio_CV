@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Brodeuse à commande numérique — Romaric Pradeau</title>
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+</head>
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="../assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+    <a href="../index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Romaric Pradeau</h1>
+    </a>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="../index.html#hero"><i class="bi bi-house navicon"></i>Accueil</a></li>
+        <li><a href="../index.html#about"><i class="bi bi-person navicon"></i>Profil</a></li>
+        <li><a href="../index.html#etude"><i class="bi bi-file-earmark-text navicon"></i>Études</a></li>
+        <li><a href="../index.html#resume"><i class="bi bi-briefcase navicon"></i>Expérience</a></li>
+        <li><a href="../index.html#portfolio" class="active"><i class="bi bi-images navicon"></i>Projets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main container py-5">
+    <a href="../index.html#portfolio" class="btn btn-outline-secondary mb-4">← Retour aux projets</a>
+
+    <header class="mb-4">
+      <p class="text-uppercase">Projet en cours</p>
+      <h1>Brodeuse à commande numérique</h1>
+      <p class="lead">Rétrofit d'une machine à coudre conventionnelle en brodeuse numérique CNC à deux axes X/Y. Le déplacement du cadre doit être synchronisé avec la position de l'aiguille pour broder des motifs pilotés par G-code.</p>
+    </header>
+
+    <section>
+      <div class="row">
+        <div class="col-lg-8">
+          <h2>Objectif et fonctionnement</h2>
+          <p>Le projet vise à automatiser une machine à coudre mécanique en ajoutant un plateau de broderie XY. Un ordinateur prépare le motif, génère un G-code spécialisé et le transmet par liaison série à la carte de commande. Les déplacements du tissu sont coordonnés avec le cycle de l'aiguille afin de réaliser le motif point par point.</p>
+
+          <h2>Architecture technique</h2>
+          <ul>
+            <li><strong>Mécanique :</strong> plateau XY guidé sur rails linéaires, entraînement par courroies GT2 et cadre de broderie.</li>
+            <li><strong>Commande des axes :</strong> carte MKS Base V1.4 autour d'un ATmega2560 à 16 MHz, avec drivers pas-à-pas A4982 intégrés.</li>
+            <li><strong>Synchronisation :</strong> fourche optique infrarouge H21A1 pour détecter la position haute de l'aiguille, avec conditionnement du signal par une carte comparatrice à LM741 conçue sur mesure.</li>
+            <li><strong>Commande moteur :</strong> variateur AC RobotDyn à TRIAC pour régler la vitesse du moteur secteur de la machine.</li>
+            <li><strong>Logiciel :</strong> outils Python pour le traitement des motifs, la génération du G-code et son envoi série vers le firmware Arduino.</li>
+          </ul>
+
+          <h2>Avancement</h2>
+          <p>Le projet est en cours. Le travail couvre la conception mécanique du plateau, l'électronique de commande et de détection, le développement du firmware et la chaîne logicielle. Les essais devront valider la synchronisation aiguille-déplacement, le comportement des axes et la qualité des motifs brodés.</p>
+        </div>
+        <aside class="col-lg-4">
+          <h2>Compétences mobilisées</h2>
+          <ul>
+            <li>Conception mécanique et cinématique XY</li>
+            <li>Électronique de puissance et conditionnement de capteurs</li>
+            <li>Programmation embarquée Arduino (C/C++)</li>
+            <li>Traitement de motifs et génération de G-code en Python</li>
+            <li>Communication série et essais de mise au point</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Romaric Pradeau</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
