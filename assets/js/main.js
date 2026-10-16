@@ -1,32 +1,59 @@
 /**
  * Script Principal — Portfolio Romaric Pradeau
  * Refactorisé en ES6+, Allégé du code mort et Optimisé pour les performances (60 FPS)
+ * Support complet du Responsive (PC, Tablette, Mobile)
  */
 
 (() => {
   "use strict";
 
   /* ==============================================================
-     1. Gestion du Menu Mobile et Accessibilité
+     1. Gestion du Menu Mobile / Tablette & Backdrop
      ============================================================== */
   const header = document.querySelector('#header');
   const headerToggleBtn = document.querySelector('.header-toggle');
 
+  // Création dynamique d'un fond d'obscurcissement (backdrop) pour mobile/tablette
+  let backdrop = document.querySelector('.header-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'header-backdrop';
+    backdrop.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(backdrop);
+  }
+
   /**
-   * Bascule l'état d'affichage du menu latéral sur mobile
-   * et met à jour l'attribut ARIA pour les lecteurs d'écran.
+   * Bascule l'état d'affichage du menu latéral sur mobile et tablette,
+   * active le backdrop flouté et met à jour l'accessibilité ARIA.
    */
   const toggleHeader = () => {
     if (!header || !headerToggleBtn) return;
     const isShown = header.classList.toggle('header-show');
+    backdrop.classList.toggle('show', isShown);
     headerToggleBtn.classList.toggle('bi-list', !isShown);
     headerToggleBtn.classList.toggle('bi-x', isShown);
     headerToggleBtn.setAttribute('aria-expanded', String(isShown));
+    document.body.classList.toggle('mobile-nav-active', isShown);
   };
 
   if (headerToggleBtn) {
     headerToggleBtn.addEventListener('click', toggleHeader);
   }
+
+  // Fermer le menu lors d'un clic en dehors (sur le backdrop flouté)
+  backdrop.addEventListener('click', () => {
+    if (header?.classList.contains('header-show')) {
+      toggleHeader();
+    }
+  });
+
+  // Fermeture accessible avec la touche Échap
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && header?.classList.contains('header-show')) {
+      toggleHeader();
+      headerToggleBtn?.focus();
+    }
+  });
 
   // Fermer automatiquement le menu mobile lors d'un clic sur un lien d'ancre
   document.querySelectorAll('#navmenu a').forEach(link => {
@@ -52,7 +79,7 @@
   });
 
   /* ==============================================================
-     2. Preloader
+     2. Preloader avec fondu CSS
      ============================================================== */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
@@ -69,7 +96,7 @@
 
   const toggleScrollTop = () => {
     if (scrollTop) {
-      scrollTop.classList.toggle('active', window.scrollY > 100);
+      scrollTop.classList.toggle('active', window.scrollY > 120);
     }
   };
 
@@ -102,7 +129,7 @@
   };
 
   /* ==============================================================
-     5. Écouteur Scroll Optimisé via requestAnimationFrame (Pas de saccade)
+     5. Scroll Throttlé via requestAnimationFrame (Pas de saccade)
      ============================================================== */
   let scrollTicking = false;
   const onScroll = () => {
@@ -123,7 +150,7 @@
   });
 
   /* ==============================================================
-     6. Compensation du défilement pour les liens d'ancre au chargement
+     6. Compensation du défilement pour les ancres URL au chargement
      ============================================================== */
   window.addEventListener('load', () => {
     if (window.location.hash) {
@@ -143,7 +170,6 @@
   /* ==============================================================
      7. Initialisation Sécurisée des Librairies Actives
      ============================================================== */
-  // AOS (Animations au défilement)
   if (typeof AOS !== 'undefined') {
     AOS.init({
       duration: 600,
@@ -153,7 +179,6 @@
     });
   }
 
-  // Typed.js (Animation d'écriture de la section Hero)
   const typedTarget = document.querySelector('.typed');
   if (typedTarget && typeof Typed !== 'undefined') {
     const items = typedTarget.getAttribute('data-typed-items');
@@ -168,13 +193,12 @@
     }
   }
 
-  // GLightbox (Visionneuse d'images haute résolution)
   if (typeof GLightbox !== 'undefined') {
     GLightbox({ selector: '.glightbox' });
   }
 
   /* ==============================================================
-     8. Menu / Raccourci Projets Flottant (si présent)
+     8. Menu / Raccourci Projets Flottant (compatibilité)
      ============================================================== */
   const shortcutBtn = document.getElementById('projectsShortcut');
   const shortcutPopup = document.getElementById('projectsPopup');
