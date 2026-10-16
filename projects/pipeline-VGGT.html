@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pipeline de Pré-traitement VGGT — Romaric Pradeau</title>
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+</head>
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <div class="profile-img">
+      <img src="../assets/img/my-profile-img.jpg" alt="Romaric Pradeau" class="img-fluid rounded-circle">
+    </div>
+    <a href="../index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Romaric Pradeau</h1>
+    </a>
+    <div class="social-links text-center">
+      <a href="https://www.facebook.com/share/14Li6wpQQL6/" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/pradeau.romaric/" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/romaric-pradeau-095abb2a2" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="../index.html#hero" class="active"><i class="bi bi-house navicon"></i> Accueil</a></li>
+        <li><a href="../index.html#about"><i class="bi bi-person navicon"></i> Profil</a></li>
+        <li><a href="../index.html#etude"><i class="bi bi-file-earmark-text navicon"></i> Étude</a></li>
+        <li><a href="../index.html#resume"><i class="bi bi-briefcase navicon"></i> Expérience Professionnelle</a></li>
+
+        <li class="dropdown">
+          <a href="../index.html#portfolio"><i class="bi bi-images navicon"></i> Projets <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="../projects/concour-fanuc.html">Concours FANUC</a></li>
+            <li><a href="../projects/concour-olympiade-physique.html">Concours Olympiade de Physique</a></li>
+            <li><a href="../projects/robot-suiveur-ligne.html">Robot suiveur de ligne</a></li>
+            <li><a href="../projects/mini-robot-humanoide.html">Mini robot humanoïde</a></li>
+            <li><a href="../projects/robot-humanoide.html">Robot humanoïde</a></li>
+            <li><a href="../projects/maintenance-moteur-vr.html">Maintenance moteur (VR)</a></li>
+            <li><a href="../projects/renovation-maquette-machine.html">Rénovation maquette machine</a></li>
+            <li><a href="../projects/maquette-tourelle-balistique.html">Maquette tourelle balistique</a></li>
+            <li><a href="../projects/recycleur-plastique-3d.html">Recycleur plastique + impression 3D</a></li>
+            <li><a href="../projects/brodeuse.html">Brodeuse Numérique CNC</a></li>
+            <li><a href="../projects/pipeline-VGGT.html" class="active">Pipeline VGGT (Stage M1)</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <a href="../index.html#portfolio" class="btn btn-outline-secondary">← Retour aux projets</a>
+    </div>
+
+    <header class="mb-4" style="background-image: url('../assets/img/projects/vggt/navette.jpg'); background-size: cover; background-position: center; position: relative; padding: 110px 20px; border-radius: 8px; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.62); border-radius: 8px;"></div>
+      <h1 id="title" style="position: relative; z-index: 1; color: white; text-align: center; margin: 0; font-weight: 700;">Pipeline de Pré-traitement d'Images pour l'Architecture VGGT</h1>
+    </header>
+    <h2 id="subtitle" class="text-muted text-center mb-4 fs-5">Stage Master 1 Automatique & Robotique — Institut Pascal (UMR 6602 CNRS / UCA) & Plateforme PAVIN</h2>
+
+    <section id="details">
+      <div class="row">
+        <div class="col-lg-8">
+          <h3>Contexte</h3>
+          <p class="text-indent" id="contexte">
+            Dans le cadre de mon Master 1 en Automatique et Robotique à l'<strong>Institut Pascal</strong> (UMR 6602 CNRS / Université Clermont Auvergne), au sein de l'axe <strong>ISPR</strong> (Image, Systèmes de Perception, Robotique) et de l'équipe de recherche <strong>ComSee</strong>, j'ai réalisé une étude approfondie sur les défis de la perception multi-capteurs appliquée aux véhicules autonomes.
+          </p>
+          <p class="text-indent">
+            Les expérimentations ont été menées sur la plateforme d'essais <strong>PAVIN</strong> (Plateforme d'Auvergne pour Véhicules Intelligents), en utilisant une navette autonome <strong>EasyMile EZ10</strong>. Ce véhicule est équipé d'une architecture multi-capteurs complexe :
+          </p>
+          <ul>
+            <li><strong>4 caméras périphériques :</strong> une caméra avant et une arrière monochromes, couplées à deux caméras couleur latérales (orientées à droite et à gauche). Contrainte majeure de l'étude : <em>les caméras ne partagent aucune zone de recouvrement visuel direct</em>.</li>
+            <li><strong>2 LiDARs 3D à 360° :</strong> Hesai Pandar XT32 (32 faisceaux lasers) positionnés sur le toit (avant et arrière) pour capturer la géométrie métrique de l'environnement tridimensionnel.</li>
+            <li><strong>Capteurs proprioceptifs & géospatiaux :</strong> odométrie cinématique du châssis à 4 roues directrices (4WS) et récepteur GNSS (GPS).</li>
+          </ul>
+          <p class="text-indent">
+            <strong>L'enjeu central :</strong> Évaluer la faisabilité et la robustesse de l'<strong>auto-calibration extrinsèque</strong> du système de vision sans mire géométrique dédiée, en exploitant le modèle d'apprentissage profond de pointe <strong>VGGT</strong> (<em>Visual Geometry Grounded Transformer</em>).
+          </p>
+
+          <h3>Problématique & Verrous Scientifiques</h3>
+          <p class="text-indent">
+            Les données brutes enregistrées sous forme de fichiers <code>.rosbag</code> (ROS 2) présentaient plusieurs obstacles majeurs empêchant l'alimentation directe du réseau de neurones :
+          </p>
+          <ul>
+            <li><strong>Contrainte mémoire et passage à l'échelle de VGGT :</strong> Le modèle repose sur un mécanisme d'attention alternée (<em>Frame-wise</em> et <em>Global Attention</em>) appliqué à des tokens visuels. La complexité mémoire en VRAM GPU croît de façon critique avec le nombre de trames, limitant l'échantillonnage de traitement à un bloc strict de <strong>20 images maximum</strong> par inférence.</li>
+            <li><strong>Redondance massive et données stationnaires :</strong> En circulation réelle, la navette traverse des phases d'arrêt prolongées (intersections, feux, cédez-le-passage). L'injection d'images quasi-identiques sans mouvement de translation gaspille les ressources GPU et induit le modèle en erreur en créant des dégénérescences géométriques.</li>
+            <li><strong>Altérations optiques et photométriques :</strong> Les objectifs grand-angle souffrent d'une importante distorsion géométrique (effet <em>fisheye</em>). De plus, les variations d'ensoleillement génèrent des trames surexposées/saturées (perte d'information dans les hautes lumières) ou du flou cinétique en phase de virage.</li>
+            <li><strong>Hétérogénéité des modalités (2D visuel vs 3D métrique) :</strong> VGGT opère exclusivement sur des flux d'images 2D, tandis que les LiDARs fournissent une géométrie métrique 3D absolue. L'absence de passerelle logicielle empêchait la création d'une vérité terrain indépendante pour valider les poses estimées.</li>
+          </ul>
+
+          <figure class="my-4 text-center">
+            <img src="../assets/img/projects/vggt/navelle_schéma.png" alt="Architecture des capteurs sur la navette EasyMile EZ10" class="img-fluid rounded shadow-sm">
+            <figcaption class="text-muted small mt-2">Architecture optique et répartition spatiale des 4 caméras et 2 LiDARs 3D sur la navette EasyMile EZ10.</figcaption>
+          </figure>
+
+          <h3>Architecture Fonctionnelle du Pipeline</h3>
+          <p class="text-indent">
+            Face à ces contraintes, j'ai conçu et développé un <strong>pipeline modulaire et intelligent de pré-traitement en Python et ROS 2</strong>, articulé en 6 briques algorithmiques complémentaires :
+          </p>
+
+          <h5>1. Synchronisation temporelle stricte et gestion des flux</h5>
+          <p class="text-indent">
+            Développement d'un algorithme d'appariement à <em>fenêtre temporelle glissante</em> (< 1 ms de tolérance). Une politique rigoureuse de rejet a été mise en place : si l'une des quatre caméras subit une perte de trame (<em>frame drop</em>), le quadruplet complet est immédiatement rejeté pour garantir l'intégrité géométrique spatio-temporelle de l'échantillon.
+          </p>
+
+          <h5>2. Filtrage cinématique et tri odométrique (Arrêt du véhicule)</h5>
+          <p class="text-indent">
+            Analyse conjointe des vecteurs de vitesse odométrique ($v_x, v_y, \omega_z$). Détection automatique des phases d'immobilité stricte via un seuillage adaptatif $\varepsilon \approx 0$. Ce tri a permis d'isoler des lots de repos (notamment des phases d'arrêt de 15 secondes planifiées sur PAVIN), éliminant tout flou de bougé et isolant la géométrie statique.
+          </p>
+
+          <figure class="my-4 text-center">
+            <img src="../assets/img/projects/vggt/vitesse_odom.png" alt="Évolution de la vitesse odométrique et détection d'arrêt" class="img-fluid rounded shadow-sm" style="max-height: 380px;">
+            <figcaption class="text-muted small mt-2">Extraction odométrique et détection mathématique des phases d'arrêt ($v=0$) pour le filtrage cinématique.</figcaption>
+          </figure>
+
+          <h5>3. Correction géométrique et conditionnement photométrique (OpenCV)</h5>
+          <ul>
+            <li><strong>Dédistorsion selon le modèle unifié de Mei :</strong> Inversion mathématique de la distorsion grand-angle fisheye par projection sur la sphère unitaire ($\xi$), reprojection avec la matrice intrinsèque $K$ extraite des métadonnées <code>camera_info</code> et rééchantillonnage bilinéaire via <code>cv2.remap</code>.</li>
+            <li><strong>Filtrage de saturation :</strong> Détection de la surface brûlée par masque booléen sur le niveau 255. Rejet automatique des trames dépassant un seuil critique de 15% de pixels saturés.</li>
+            <li><strong>Analyse du contraste et netteté Laplacienne :</strong> Calcul de la variance du Laplacien ($\Delta I = \frac{\partial^2 I}{\partial x^2} + \frac{\partial^2 I}{\partial y^2}$) afin d'éliminer les images dégradées ne présentant pas de gradients d'intensité suffisants.</li>
+          </ul>
+
+          <h5>4. Filtrage visuel intelligent par Transformer (LoFTR) & Contrôle du recouvrement</h5>
+          <p class="text-indent">
+            <strong>Le point de bascule méthodologique du projet :</strong> Le modèle VGGT ne traite pas des images isolées, mais repose sur l'attention globale entre vues. Un recouvrement trop élevé (>80%) crée une redondance stérile, tandis qu'un recouvrement insuffisant (<30%) rend l'appariement géométrique instable.
+          </p>
+          <p class="text-indent">
+            Pour quantifier et réguler ce recouvrement sans dépendre de détecteurs de coins classiques (SIFT/ORB) sensibles aux faibles textures, j'ai intégré le réseau <strong>LoFTR</strong> (<em>Local Feature Transformer</em>). Grâce à ses mécanismes de self et cross-attention denses, LoFTR évalue avec précision le pourcentage de chevauchement géométrique réel entre deux vues. Deux algorithmes de sélection ont été développés :
+          </p>
+          <ul>
+            <li><strong>Sélection panoramique séquentielle :</strong> Parcours chronologique avec rétention sous une consigne cible de recouvrement optimal (ex: 60%), garantissant une parallaxe idéale tout en respectant la limite des 20 trames.</li>
+            <li><strong>Recherche itérative par consigne cible :</strong> Exploration globale sur le jeu de données pour extraire la paire d'images candidate la plus proche du taux de recouvrement visé.</li>
+          </ul>
+
+          <figure class="my-4 text-center">
+            <img src="../assets/img/projects/vggt/loftr_matching.jpg" alt="Appariement dense LoFTR pour le calcul du recouvrement" class="img-fluid rounded shadow-sm">
+            <figcaption class="text-muted small mt-2">Appariement dense sans détecteur par Transformer (LoFTR) pour quantifier précisément le taux de recouvrement géométrique.</figcaption>
+          </figure>
+
+          <h5>5. Référence tridimensionnelle LiDAR & Benchmark SLAM</h5>
+          <p class="text-indent">
+            Afin de disposer d'une référence géométrique indépendante (<em>Ground Truth</em>) pour évaluer les prédictions d'auto-calibration de VGGT, les scans du LiDAR 3D Hesai Pandar XT32 ont été exploités :
+          </p>
+          <ul>
+            <li>Conditionnement spatial du nuage de points : filtrage des auto-occlusions du véhicule (< 2 m) et limitation de la portée utile à 20 m.</li>
+            <li>Déploiement d'une architecture de comparaison basée sur <strong>Kitware LiDAR SLAM</strong> (recalage géométrique <em>Scan-to-Map</em>) sous ROS 2, fournissant une trajectoire 3D continue indépendante de la vision pure.</li>
+          </ul>
+
+          <h5>6. Traitement dynamique par Chunks & Concaténation de Trajectoire</h5>
+          <p class="text-indent">
+            Partitionnement automatique des flux sélectionnés en blocs discrets de 20 images enregistrés sous format compressé <code>.npy</code> (<code>predictions_chunk_XXXX.npy</code>). Réassemblage de la trajectoire globale via un algorithme de concaténation à fenêtre de recouvrement inter-blocs ($n_{\text{overlap}} = 3$) et recalage hiérarchique par morceaux (<em>piecewise</em>) face à la vérité terrain GPS.
+          </p>
+
+          <h3>Résultats & Bilan Scientifique</h3>
+          <p class="text-indent" id="resultats">
+            L'évaluation du pipeline complet a démontré des gains majeurs, confirmant que le conditionnement en amont est déterminant pour l'efficacité des modèles d'IA géométriques :
+          </p>
+          <ul>
+            <li><strong>Élimination de plus de 80% des données redondantes</strong> sans aucune altération de l'information géométrique utile.</li>
+            <li><strong>Suppression des saturations mémoire GPU :</strong> exécution fluide des inférences VGGT dans la limite des 20 trames par bloc.</li>
+            <li><strong>Convergence et stabilité accrues :</strong> La régulation du taux de recouvrement visuel par LoFTR à une valeur cible (~60%) a permis d'optimiser l'attention globale du modèle, stabilisant les prédictions des poses extrinsèques de caméras et la densité des cartes de profondeur.</li>
+            <li><strong>Validation de la trajectoire :</strong> Confrontation cohérente de la structure globale reconstruite avec la vérité terrain GNSS/LiDAR, tout en caractérisant la dérive monoculaire résiduelle (qui ouvre la voie à un ajustement de faisceaux global / <em>bundle adjustment</em>).</li>
+            <li><strong>Rigueur méthodologique et travail d'équipe :</strong> Collaboration étroite avec les doctorants de l'Institut Pascal et partage régulier des avancées, consolidant mon expertise en ROS 2, vision par ordinateur, algorithmes d'apprentissage profond et robotique autonome.</li>
+          </ul>
+        </div>
+
+        <aside class="col-lg-4">
+          <h3>Compétences & technologies</h3>
+          <ul id="techs">
+            <li><strong>Robotique Mobile :</strong> Perception multi-capteurs, navigation autonome navette</li>
+            <li><strong>Middleware :</strong> ROS 2 (Humble), RQT, Rosbag2, TF2</li>
+            <li><strong>Deep Learning :</strong> Modèle VGGT (Visual Geometry Grounded Transformer), LoFTR</li>
+            <li><strong>Vision par Ordinateur :</strong> OpenCV, Modèle unifié de Mei, Dédistorsion fisheye, Laplacien</li>
+            <li><strong>LiDAR 3D & SLAM :</strong> Hesai Pandar XT32 (32 lasers), PointCloud2, Kitware LiDAR SLAM</li>
+            <li><strong>Odométrie & GNSS :</strong> Cinématique 4WS, RTK-GPS, recalage de trajectoires</li>
+            <li><strong>Langages & Outils :</strong> Python 3 (NumPy, PyTorch, SciPy, Matplotlib), Bash, Linux, Git</li>
+            <li><strong>Optimisation matérielle :</strong> Gestion mémoire GPU (VRAM), traitement par blocs</li>
+            <li><strong>Rigueur scientifique :</strong> Analyse critique, démarche expérimentale, rédaction technique</li>
+          </ul>
+
+          <h3>Liens & Documents</h3>
+          <ul>
+            <li><a href="https://github.com/RhomDev/rosbag_extraction" target="_blank" rel="noopener" id="github"><i class="bi bi-github"></i> Dépôt GitHub (rosbag_extraction)</a></li>
+            <li><a href="../assets/projet/vggt/Rapport_Stage_M1_VGGT.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Télécharger le Rapport de Stage M1 (PDF)</a></li>
+            <li><a href="https://www.institut-pascal.fr/" target="_blank" rel="noopener"><i class="bi bi-building"></i> Institut Pascal (UMR 6602 CNRS / UCA)</a></li>
+          </ul>
+        </aside>
+      </div>
+
+      <h3 class="mt-5 mb-4">Galerie du Projet</h3>
+      <div class="row g-4" id="gallery">
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm border-0">
+            <a href="../assets/img/projects/vggt/navette.jpg" class="glightbox" data-gallery="vggt-gallery" data-title="Navette autonome EasyMile EZ10">
+              <img src="../assets/img/projects/vggt/navette.jpg" class="img-fluid rounded-top" alt="Navette autonome EasyMile EZ10">
+            </a>
+            <div class="card-body p-3">
+              <h6 class="card-title fw-bold mb-1">Navette EasyMile EZ10</h6>
+              <p class="card-text text-muted small">Plateforme mobile expérimentale sur le circuit d'essais PAVIN.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm border-0">
+            <a href="../assets/img/projects/vggt/navelle_schéma.png" class="glightbox" data-gallery="vggt-gallery" data-title="Schéma des capteurs embarqués">
+              <img src="../assets/img/projects/vggt/navelle_schéma.png" class="img-fluid rounded-top" alt="Schéma des capteurs embarqués">
+            </a>
+            <div class="card-body p-3">
+              <h6 class="card-title fw-bold mb-1">Architecture Optique & Capteurs</h6>
+              <p class="card-text text-muted small">Implantation des 4 caméras grand-angle sans recouvrement et des 2 LiDARs 3D.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm border-0">
+            <a href="../assets/img/projects/vggt/robag_rqt.png" class="glightbox" data-gallery="vggt-gallery" data-title="Graphe des flux ROS 2 sous RQT">
+              <img src="../assets/img/projects/vggt/robag_rqt.png" class="img-fluid rounded-top" alt="Graphe des flux ROS 2 sous RQT">
+            </a>
+            <div class="card-body p-3">
+              <h6 class="card-title fw-bold mb-1">Flux ROS 2 & Synchronisation</h6>
+              <p class="card-text text-muted small">Visualisation sous RQT-graph des nœuds et des topics capteurs synchronisés.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm border-0">
+            <a href="../assets/img/projects/vggt/vitesse_odom.png" class="glightbox" data-gallery="vggt-gallery" data-title="Vitesse odométrique et détection d'arrêt">
+              <img src="../assets/img/projects/vggt/vitesse_odom.png" class="img-fluid rounded-top" alt="Vitesse odométrique et détection d'arrêt">
+            </a>
+            <div class="card-body p-3">
+              <h6 class="card-title fw-bold mb-1">Filtrage Cinématique Odométrique</h6>
+              <p class="card-text text-muted small">Détection automatique des phases de vitesse nulle pour l'élimination des redondances.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm border-0">
+            <a href="../assets/img/projects/vggt/rviz2_lidar.png" class="glightbox" data-gallery="vggt-gallery" data-title="Visualisation RViz2 du LiDAR Hesai">
+              <img src="../assets/img/projects/vggt/rviz2_lidar.png" class="img-fluid rounded-top" alt="Visualisation RViz2 du LiDAR Hesai">
+            </a>
+            <div class="card-body p-3">
+              <h6 class="card-title fw-bold mb-1">Nuage de Points LiDAR 3D sous RViz2</h6>
+              <p class="card-text text-muted small">Acquisition des 32 faisceaux lasers du LiDAR Hesai Pandar XT32.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm border-0">
+            <a href="../assets/img/projects/vggt/environement_lidar.png" class="glightbox" data-gallery="vggt-gallery" data-title="Trame LiDAR de l'environnement PAVIN">
+              <img src="../assets/img/projects/vggt/environement_lidar.png" class="img-fluid rounded-top" alt="Trame LiDAR de l'environnement PAVIN">
+            </a>
+            <div class="card-body p-3">
+              <h6 class="card-title fw-bold mb-1">Reconstruction Spatiale LiDAR</h6>
+              <p class="card-text text-muted small">Conditionnement spatial et filtrage des nuages de points de 2 à 20 mètres.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm border-0">
+            <a href="../assets/img/projects/vggt/loftr_matching.jpg" class="glightbox" data-gallery="vggt-gallery" data-title="Appariement dense par Transformer LoFTR">
+              <img src="../assets/img/projects/vggt/loftr_matching.jpg" class="img-fluid rounded-top" alt="Appariement dense par Transformer LoFTR">
+            </a>
+            <div class="card-body p-3">
+              <h6 class="card-title fw-bold mb-1">Appariement Géométrique Dense (LoFTR)</h6>
+              <p class="card-text text-muted small">Mise en correspondance des points d'intérêt pour le calcul du taux de recouvrement.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm border-0">
+            <a href="../assets/img/projects/vggt/diagnostic_overlap.jpg" class="glightbox" data-gallery="vggt-gallery" data-title="Diagnostic de recouvrement visuel">
+              <img src="../assets/img/projects/vggt/diagnostic_overlap.jpg" class="img-fluid rounded-top" alt="Diagnostic de recouvrement visuel">
+            </a>
+            <div class="card-body p-3">
+              <h6 class="card-title fw-bold mb-1">Diagnostic de Recouvrement</h6>
+              <p class="card-text text-muted small">Contrôle de la consigne cible (60%) pour garantir la parallaxe optimale pour VGGT.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm border-0">
+            <a href="../assets/img/projects/vggt/image_source.png" class="glightbox" data-gallery="vggt-gallery" data-title="Flux des caméras embarquées">
+              <img src="../assets/img/projects/vggt/image_source.png" class="img-fluid rounded-top" alt="Flux des caméras embarquées">
+            </a>
+            <div class="card-body p-3">
+              <h6 class="card-title fw-bold mb-1">Images Sources Multi-Caméras</h6>
+              <p class="card-text text-muted small">Échantillons des flux avant, arrière et latéraux avant traitement et dédistortion.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm border-0">
+            <a href="../assets/img/projects/vggt/visualisation_sortie_vggt_loaclisation_camera.png" class="glightbox" data-gallery="vggt-gallery" data-title="Sortie et localisation des caméras par VGGT">
+              <img src="../assets/img/projects/vggt/visualisation_sortie_vggt_loaclisation_camera.png" class="img-fluid rounded-top" alt="Sortie et localisation des caméras par VGGT">
+            </a>
+            <div class="card-body p-3">
+              <h6 class="card-title fw-bold mb-1">Sortie VGGT & Localisation 3D</h6>
+              <p class="card-text text-muted small">Reconstruction et estimation des poses extrinsèques de caméras produites par le modèle.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Romaric Pradeau</span> — Tous droits réservés</p>
+      </div>
+      <div class="credits text-center">
+        Portfolio d'Ingénierie & Robotique
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

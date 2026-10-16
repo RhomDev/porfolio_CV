@@ -1,77 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - iPortfolio Bootstrap Template</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Romaric Pradeau — Étudiant Master Automatique &amp; Robotique | Portfolio &amp; CV</title>
+  
+  <!-- Métadonnées SEO principales -->
+  <meta name="description" content="Portfolio et CV de Romaric Pradeau, étudiant en Master Automatique &amp; Robotique à l'Institut Pascal. Découvrez mes compétences et projets en robotique, vision par ordinateur, mécatronique et automatisme industriel.">
+  <meta name="keywords" content="Romaric Pradeau, Automatique, Robotique, Mécatronique, Vision par ordinateur, ROS 2, LoFTR, VGGT, Stage, Portfolio, CV, Ingénierie">
+  <meta name="author" content="Romaric Pradeau">
+
+  <!-- Open Graph / Réseaux Sociaux -->
+  <meta property="og:title" content="Romaric Pradeau — Portfolio &amp; CV | Automatique &amp; Robotique">
+  <meta property="og:description" content="Découvrez mes compétences et réalisations en robotique mobile, automatisme, vision par ordinateur et mécatronique.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/my-profile-img.jpg">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
+  <!-- Préconnexion et chargement optimisé des polices Google (uniquement les graisses nécessaires) -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <!-- Fichiers CSS Vendor essentiels (retrait des bibliothèques mortes/inutilisées) -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
+  <!-- Fichier CSS Principal optimisé et nettoyé -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+  <!-- ==============================================================
+       En-tête & Barre Latérale de Navigation
+       ============================================================== -->
+  <header id="header" class="header dark-background d-flex flex-column" aria-label="Navigation principale">
+    <!-- Bouton toggle mobile accessible (avec rôle button et aria-expanded) -->
+    <button type="button" class="header-toggle d-xl-none bi bi-list" aria-label="Basculer le menu de navigation" aria-expanded="false" aria-controls="navmenu"></button>
 
     <div class="profile-img">
-      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+      <!-- Dimensions explicites pour prévenir le Cumulative Layout Shift (CLS) -->
+      <img src="assets/img/my-profile-img.jpg" alt="Portrait de Romaric Pradeau" width="120" height="120" class="img-fluid rounded-circle">
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Romaric Pradeau</h1>
+      <span class="sitename">Romaric Pradeau</span>
     </a>
 
+    <!-- Liens réseaux sociaux avec aria-label explicites pour l'accessibilité -->
     <div class="social-links text-center">
-      <a href="https://www.facebook.com/share/14Li6wpQQL6/" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="https://www.instagram.com/pradeau.romaric/" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/romaric-pradeau-095abb2a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.facebook.com/share/14Li6wpQQL6/" class="facebook" aria-label="Profil Facebook de Romaric Pradeau" target="_blank" rel="noopener"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+      <a href="https://www.instagram.com/pradeau.romaric/" class="instagram" aria-label="Profil Instagram de Romaric Pradeau" target="_blank" rel="noopener"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/in/romaric-pradeau-095abb2a2" class="linkedin" aria-label="Profil LinkedIn de Romaric Pradeau" target="_blank" rel="noopener"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
     </div>
 
-    <nav id="navmenu" class="navmenu">
+    <nav id="navmenu" class="navmenu" aria-label="Menu du site">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i> Accueil</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> Profil</a></li>
-        <li><a href="#etude"><i class="bi bi-file-earmark-text navicon"></i> Etude</a></li>
-        <li><a href="#resume"><i class="bi bi-briefcase navicon"></i> Expérience Professionel</a></li>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon" aria-hidden="true"></i> Accueil</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon" aria-hidden="true"></i> Profil</a></li>
+        <li><a href="#etude"><i class="bi bi-file-earmark-text navicon" aria-hidden="true"></i> Formation</a></li>
+        <li><a href="#resume"><i class="bi bi-briefcase navicon" aria-hidden="true"></i> Expérience Professionnelle</a></li>
 
         <li class="dropdown">
-          <a href="#portfolio"><i class="bi bi-images navicon"></i> Projects <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <a href="#portfolio"><i class="bi bi-images navicon" aria-hidden="true"></i> Projets <i class="bi bi-chevron-down toggle-dropdown" aria-hidden="true"></i></a>
           <ul>
             <li><a href="projects/concour-fanuc.html">Concours FANUC</a></li>
             <li><a href="projects/concour-olympiade-physique.html">Concours Olympiade Physique</a></li>
 
             <li class="dropdown">
-              <a href="#">Robots <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <a href="#">Robots <i class="bi bi-chevron-down toggle-dropdown" aria-hidden="true"></i></a>
               <ul>
                 <li><a href="projects/robot-suiveur-ligne.html">Robot suiveur de ligne</a></li>
                 <li><a href="projects/mini-robot-humanoide.html">Mini robot humanoïde</a></li>
@@ -83,57 +87,61 @@
             <li><a href="projects/renovation-maquette-machine.html">Rénovation maquette machine</a></li>
             <li><a href="projects/maquette-tourelle-balistique.html">Maquette tourelle balistique</a></li>
             <li><a href="projects/recycleur-plastique-3d.html">Recycleur plastique + impression 3D</a></li>
-            <li><a href="projects/brodeuse-numerique.html">Brodeuse à commande numérique</a></li>
+            <li><a href="projects/brodeuse.html">Brodeuse Numérique CNC</a></li>
+            <li><a href="projects/pipeline-VGGT.html">Pipeline VGGT (Stage M1)</a></li>
           </ul>
         </li>
       </ul>
     </nav>
-
   </header>
 
   <main class="main">
 
-    <!-- Hero Section -->
+    <!-- ==============================================================
+         Section Hero (Accueil) - H1 unique pour le SEO
+         ============================================================== -->
     <section id="hero" class="hero section dark-background">
-
-      <img src="assets/img/image.png" alt="" data-aos="fade-in" class="">
+      <!-- Image d'arrière-plan avec fetchpriority haute et dimensions explicites -->
+      <img src="assets/img/image.png" alt="Fond d'accueil robotique Romaric Pradeau" fetchpriority="high" width="1920" height="1080" class="hero-bg" data-aos="fade-in">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Romaric Pradeau</h2>
-        <p>Je suis <span class="typed" data-typed-items="Roboticien, Dévelopeur, Electricien, Automaticien, Animateur">Designer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <!-- Balise <h1> unique de la page pour une hiérarchie sémantique irréprochable -->
+        <h1 class="hero-title">Romaric Pradeau</h1>
+        <p>Je suis <span class="typed" data-typed-items="Roboticien, Développeur, Électricien, Automaticien, Animateur">Roboticien</span></p>
       </div>
+    </section>
 
-    </section><!-- /Hero Section -->
-    <!-- About Section -->
+    <!-- ==============================================================
+         Section About (Profil)
+         ============================================================== -->
     <section id="about" class="about section">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Profil</h2>
         <p class="text-indent">
-          Je suis une personne très passionnée et créative. Hors des cours, je bricole, invente ou construis divers matériels électroniques. 
+          Je suis une personne très passionnée et créative. Hors des cours, je bricole, invente ou construis divers matériels électroniques.
         </p>
-        <p>
+        <p class="text-indent">
           J’apprends beaucoup en autodidacte, surtout dans le domaine de l’informatique où je maîtrise de nombreux langages de programmation comme le Java, Python, le langage C, Matlab, etc.
-          </p>
-        <p class="text-indent"></Pclass>En plus de cela, je cherche toujours à améliorer mes créations ou à rénover d’anciennes machines, en y insérant de nouvelles technologies comme l’IA, et en automatisant le système. 
         </p>
-        <p class="text-indent">Je suis également très curieux et j’aime découvrir de nouvelles choses, ce qui me pousse à toujours chercher à comprendre le fonctionnement des objets qui m’entourent. 
+        <p class="text-indent">
+          En plus de cela, je cherche toujours à améliorer mes créations ou à rénover d’anciennes machines, en y insérant de nouvelles technologies comme l’IA, et en automatisant le système.
         </p>
-      </div><!-- End Section Title -->
+        <p class="text-indent">
+          Je suis également très curieux et j’aime découvrir de nouvelles choses, ce qui me pousse à toujours chercher à comprendre le fonctionnement des objets qui m’entourent.
+        </p>
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 justify-content-center">
+        <div class="row justify-content-center">
           <div class="col-12">
-            <div class="about-card d-flex align-items-center gap-4" data-aos="fade-up" data-aos-delay="100">
+            <!-- Carte Profil modernisée en Flexbox/Grid -->
+            <div class="about-card d-flex align-items-center gap-4">
               <div class="profile-frame flex-shrink-0">
-                <img src="assets/img/my-profile-img.jpg" alt="Romaric Pradeau" class="img-fluid">
+                <img src="assets/img/my-profile-img.jpg" alt="Portrait professionnel de Romaric Pradeau" width="210" height="210" loading="lazy" class="img-fluid">
               </div>
 
-              <div class="col-lg-8 content p-0">
-                <h2>Romaric Pradeau — Automaticien & Roboticien</h2>
-
+              <div class="content p-0">
+                <h3>Romaric Pradeau — Automaticien &amp; Roboticien</h3>
                 <p class="fst-italic py-2">
                   Étudiant en Master Automatique et Robotique (2025). Expériences en automatisme industriel, robotique et maintenance. Compétences en programmation embarquée, intégration mécatronique et mise en service.
                 </p>
@@ -143,7 +151,7 @@
                     <h4>Contact</h4>
                     <ul class="cv-list">
                       <li><strong>Téléphone :</strong> 06 65 13 57 98</li>
-                      <li><strong>Email :</strong> pradeau.romaric@proton.me</li>
+                      <li><strong>Email :</strong> <a href="mailto:pradeau.romaric@proton.me">pradeau.romaric@proton.me</a></li>
                       <li><strong>Localisation :</strong> Clermont‑Ferrand, France</li>
                     </ul>
                   </div>
@@ -151,42 +159,40 @@
                   <div class="col-md-6">
                     <h4>Formation</h4>
                     <ul class="cv-list">
-                      <li><strong>Master Automatique & Robotique</strong> — 2025 (en cours)</li>
-                      <li><strong>Licence Science Pour l'Ingénieur</strong> — 2024‑2025 (mécatronique)</li>
+                      <li><strong>Master Automatique &amp; Robotique</strong> — 2025 (en cours)</li>
+                      <li><strong>Licence Sciences Pour l'Ingénieur</strong> — 2024‑2025 (mécatronique)</li>
                       <li><strong>DUT GEII</strong> — 2022‑2024 (Automatisme / Informatique Industrielle)</li>
                     </ul>
                   </div>
                 </div>
 
-                <h4 class="mt-3">Profil professionnel</h4>
-                <h3 class="mt-4">Compétences</h3>
-
+                <h4 class="mt-4">Compétences</h4>
                 <div class="row cv-skills">
                   <div class="col-md-6">
                     <h5>Technique</h5>
                     <ul class="cv-list">
                       <li>Automatisme industriel : Siemens, Schneider</li>
-                      <li>Robotique : Fanuc, Staubli, Kuka</li>
+                      <li>Robotique : Fanuc, Stäubli, Kuka</li>
                       <li>Programmation embarquée : C, C++</li>
                       <li>Électronique : capteurs, actionneurs, électronique de puissance</li>
                     </ul>
                   </div>
 
                   <div class="col-md-6">
-                    <h5>Outils & Méthodes</h5>
+                    <h5>Outils &amp; Méthodes</h5>
                     <ul class="cv-list">
-                      <li>CAO : SolidWorks, Catia, NX(Siemens)</li>
+                      <li>CAO : SolidWorks, Catia, NX (Siemens)</li>
                       <li>Réseaux industriels : Modbus, Ethernet industriel</li>
-                      <li>Tests & mesure : oscilloscope, multimètre, bancs de test</li>
-                      <li>Gestion de versions : GitHub</li>
+                      <li>Tests &amp; mesure : oscilloscope, multimètre, bancs de test</li>
+                      <li>Gestion de versions : Git &amp; GitHub</li>
                     </ul>
                   </div>
 
                   <div class="col-md-6 mt-3">
-                    <h5>Langages & Dev</h5>
+                    <h5>Langages &amp; Dév</h5>
                     <ul class="cv-list">
                       <li>Python, Java, C/C++</li>
-                      <li>Shell, outils de build (Make, CMake)</li>
+                      <li>Shell Linux, outils de build (Make, CMake)</li>
                     </ul>
                   </div>
 
@@ -200,71 +206,71 @@
                   </div>
                 </div>
 
-                <p class="mt-3"><strong>CV complet :</strong> <a href="assets/CV_Romaric_Pradeau.pdf" target="_blank" rel="noopener">Télécharger (PDF)</a></p>
+                <p class="mt-4 mb-0"><strong>CV complet :</strong> <a href="assets/CV_Romaric_Pradeau.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Télécharger le CV (PDF)</a></p>
               </div>
             </div>
           </div>
         </div>
-
       </div>
+    </section>
 
-    </section><!-- /About Section -->
-
-    <!-- Resume Section -->
+    <!-- ==============================================================
+         Section Formation (#etude)
+         ============================================================== -->
     <section id="etude" class="resume section">
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Formation</h2>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
           <div class="col-lg-8">
             <div class="resume-item">
               <h4>Master Automatique et Robotique</h4>
               <h5>2025 (en cours)</h5>
-              <p><em></em></p>
+              <p class="text-indent">Formation universitaire avancée axée sur la modélisation des systèmes dynamiques, la commande robuste, la vision artificielle, la perception multi-capteurs (LiDAR, caméras, odométrie) et l'intelligence artificielle appliquée à la robotique autonome.</p>
             </div>
 
             <div class="resume-item">
-              <h4>Licence Science Pour l'Ingénieur</h4>
+              <h4>Licence Sciences Pour l'Ingénieur</h4>
               <h5>2024-2025</h5>
-              <p><em>Parcour mécatronique</em></p>
-              <p class="text-indent">Durant cette année, j'ai consolidé mes compétences en électronique (analogique et numérique), capteurs et actionneurs, automatisme industriel. J'ai mené des projets intégrant conception de cartes (uniquement sur banc de test), asservissements et interfaces utilisateur simples, et utilisé des outils de CAO et de mesure. Cette formation m'a également permis de développer mon sens du travail en équipe, ma rigueur expérimentale et la rédaction de documents techniques.</p>
-              <p> Grâce au parcours mécatronique, j’ai pu confirmant ainsi mes envies de poursuivre mes études dans ce domaine.</p>
+              <p><em>Parcours mécatronique</em></p>
+              <p class="text-indent">Durant cette année, j'ai consolidé mes compétences en électronique (analogique et numérique), capteurs et actionneurs, automatisme industriel. J'ai mené des projets intégrant conception de cartes (sur banc de test), asservissements et interfaces utilisateur, et utilisé des outils de CAO et de mesure. Cette formation m'a également permis de développer mon sens du travail en équipe, ma rigueur expérimentale et la rédaction de documents techniques.</p>
+              <p class="text-indent">Grâce au parcours mécatronique, j’ai pu confirmer mes motivations à poursuivre mes études dans ce domaine d'ingénierie multidisciplinaire.</p>
             </div>
 
             <div class="resume-item">
-                <h4>DUT Génie Electronique et Informatique Industriel</h4>
-                <h5>2022-2024</h5>
-                <p><em>Parcour Automatisme et Informatique Industriel</em></p>
-                <p class="text-indent"> J’ai pu acquérir de nombreuses compétences en électronique et automatisme, ce qui par ailleurs suscita mon intérêt plus tard pour la mécatronique. Par la même occasion, ma participation au concours FANUC m’a permis de concrétiser mon expérience de la mécatronique.</p>
-                <p class="text-indent">Durant ce DUT, j'ai consolidé des compétences pratiques en électronique et en électronique de puissance, en asservissements et en automatisme industriel. J'ai programmé et testé des automates, développé des applications sur systèmes embarqués (C/C++), réalisé des schémas et des montages, et effectué des mesures avec oscilloscope et multimètre. Les travaux pratiques et projets m'ont aussi familiarisé avec les réseaux industriels (Modbus, Ethernet industriel), la mise en service, le diagnostic et la rédaction de documentations techniques, tout en renforçant mon sens du travail en équipe et le respect des règles de sécurité électrique.</p>
+              <h4>DUT Génie Électrique et Informatique Industrielle (GEII)</h4>
+              <h5>2022-2024</h5>
+              <p><em>Parcours Automatisme et Informatique Industrielle</em></p>
+              <p class="text-indent">J’ai pu acquérir de nombreuses compétences en électronique et automatisme, ce qui a suscité mon intérêt pour la mécatronique. Ma participation au concours national FANUC m’a permis de concrétiser mon expérience de la robotique et de la commande numérique industrielle.</p>
+              <p class="text-indent">Durant ce DUT, j'ai consolidé des compétences pratiques en électronique de puissance, en asservissements et automates programmables industriels (API). J'ai programmé sur systèmes embarqués (C/C++), réalisé des montages et effectué des mesures avec oscilloscope et multimètre. Les travaux pratiques et projets m'ont familiarisé avec les réseaux industriels (Modbus, Ethernet industriel), la mise en service, le diagnostic et les règles de sécurité électrique.</p>
             </div>
-
           </div>
         </div>
       </div>
-    </section><!-- /Resume Section -->
+    </section>
 
-    <!-- Resume Section -->
+    <!-- ==============================================================
+         Section Expérience Professionnelle (#resume)
+         Structure HTML nettoyée et corrigée (arbre DOM régulier)
+         ============================================================== -->
     <section id="resume" class="resume section">
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Experience Professionel</h2>
-      </div><!-- End Section Title -->
+        <h2>Expérience Professionnelle</h2>
+      </div>
+
       <div class="container">
         <div class="row">
-
+          <!-- Colonne Industrie & Électricité -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Expérience Professionel en Industriel et Electricité</h3>
+            <h3 class="resume-title">Expérience en Industrie &amp; Électricité</h3>
 
             <div class="resume-item">
-              <h4>Electricien dans le Tessier</h4>
-              <h5>debut juillet à debut août 2025</h5>
-              <p class="text-indent"><em>
-                J’ai participé à la modernisation des installations électriques d’un collège en remplaçant les anciens luminaires par des LED et en installant un système de gestion DALI. Mes missions incluaient le tirage de câbles, la mise en conformité des circuits, et la configuration d’un éclairage intelligent. Ce projet a permis d’améliorer l’efficacité énergétique tout en respectant les normes et les délais.</em></p>
-              <p><strong><u>Compétences clés :</u></strong> Maîtrise des normes électriques, installation de systèmes LED/DALI, rigueur et travail en équipe.
-              </p>
+              <h4>Électricien dans le Tertiaire</h4>
+              <h5>Début juillet à début août 2025</h5>
+              <p class="text-indent"><em>J’ai participé à la modernisation des installations électriques d’un collège en remplaçant les anciens luminaires par des LED et en installant un système de gestion DALI. Mes missions incluaient le tirage de câbles, la mise en conformité des circuits, et la configuration d’un éclairage intelligent. Ce projet a permis d’améliorer l’efficacité énergétique tout en respectant les normes et les délais.</em></p>
+              <p><strong class="key-skills-title">Compétences clés :</strong> Maîtrise des normes électriques, installation de systèmes LED/DALI, rigueur et travail en équipe.</p>
               <ul>
                 <li>Employeur : PJ2M ELECTRICITE (Lempdes, 63370)</li>
                 <li>Contrat : Intérim (ALL RH, Clermont-Ferrand, 63000)</li>
@@ -272,246 +278,212 @@
             </div>
 
             <div class="resume-item">
-              <h4>Electricien : Monteur de Cable sur chantier</h4>
-              <h5>debut à juin 2025</h5>
+              <h4>Électricien : Monteur de Câble sur chantier</h4>
+              <h5>Mai à juin 2025</h5>
               <p class="text-indent"><em>J’ai assuré le tirage de câbles (puissance et informatique) sur un chantier de grande surface, en respectant les plans et les normes en vigueur. Mes missions incluaient la pose de chemins de câbles, le repérage des trajets et la collaboration avec les autres corps de métier pour garantir une installation sécurisée et fonctionnelle.</em></p>
-              <p><strong><u>Compétences clés :</u></strong> Maîtrise des techniques de tirage de câbles (puissance, données), 
-                Lecture de schémas et plans techniques,
-                Respect des normes de sécurité et des procédures de chantier,
-                Travail en équipe et coordination avec les autres intervenants,
-                Utilisation d’outils spécifiques (tire-câble, gaineuse, etc.)
-              </p>
+              <p><strong class="key-skills-title">Compétences clés :</strong> Maîtrise des techniques de tirage de câbles, lecture de plans techniques, respect strict des normes de sécurité chantier, coordination inter-équipes.</p>
               <ul>
-                <li>Entreprise IB ELECTRIQUE (Gerzat, 63360)</li>
+                <li>Entreprise : IB ELECTRIQUE (Gerzat, 63360)</li>
                 <li>Contrat : Intérim (ALL RH, Clermont-Ferrand, 63000)</li>
               </ul>
             </div>
 
             <div class="resume-item">
-              <h4>PI System Automation <span class="text-muted">(Romagnat, 63540)</span></h4>
-              <div class="resume-item">
-              <h4>Automaticien</h4>
-              <h5>Juillet-Aout 2024</h5>
-              <p class="text-indent"><em>À la suite de mon stage, j’ai poursuivi ma collaboration avec l’entreprise en tant qu’automaticien pour finaliser le projet et assurer la mise en service chez le client. J’ai été responsable de la configuration et du réglage des automates, ainsi que des tests fonctionnels pour valider la conformité des systèmes. J’ai également formé les utilisateurs à l’exploitation des équipements et résolu les problèmes techniques sur site, en collaborant étroitement avec les équipes pour garantir un déploiement réussi dans les délais impartis.</em></p>
-              <p><strong><u>Compétences clés :</u></strong> Maîtrise des outils de programmation et de diagnostic (ex : automates, IHM),
-                Capacité à analyser et résoudre des problèmes techniques sur site,
-                Sens du relationnel client et adaptabilité aux environnements industriels,
-                Respect des normes de sécurité et des procédures de mise en service.
-              </p>
+              <h4>Automaticien — PI System Automation</h4>
+              <h5>Juillet-Août 2024</h5>
+              <p class="text-indent"><em>À la suite de mon stage, j’ai poursuivi ma collaboration avec l’entreprise en tant qu’automaticien pour finaliser le projet et assurer la mise en service chez le client. J’ai été responsable de la configuration et du réglage des automates, ainsi que des tests fonctionnels pour valider la conformité des systèmes. J’ai également formé les utilisateurs et résolu les problèmes techniques sur site.</em></p>
+              <p><strong class="key-skills-title">Compétences clés :</strong> Programmation et diagnostic automates et IHM, analyse et résolution technique sur site, relationnel client, normes de sécurité.</p>
               <ul>
+                <li>Lieu : Romagnat (63540)</li>
                 <li>Contrat : Intérim (ACTO, Riom, 63200)</li>
               </ul>
-            </div><!-- End Resume Item -->
-
-            <div class="resume-item">
-              <h4>Stagière Automaticien</h4>
-              <h5>Avril-Juillet 2024</h5>
-              <p class="text-indent"><em>Pour valider mon année, j’ai effectué un stage en entreprise en tant qu’automaticien. Mes missions consistaient à réaliser des simulations et des tests en atelier pour valider le fonctionnement des systèmes automatiques, ainsi qu’à réaliser la documentation technique associée (procédures, schémas, rapports). Ce stage m’a permis de mettre en pratique mes connaissances théoriques et de développer mes compétences en analyse et en rédaction technique.</em></p>
-            </div><!-- End Resume Item -->
             </div>
 
-            
-
+            <div class="resume-item">
+              <h4>Stagiaire Automaticien — PI System Automation</h4>
+              <h5>Avril-Juillet 2024</h5>
+              <p class="text-indent"><em>Stage d'application en tant qu’automaticien : réalisation de simulations et tests en atelier pour valider le fonctionnement des systèmes automatiques, et rédaction de la documentation technique associée (procédures, schémas, rapports).</em></p>
+              <ul>
+                <li>Lieu : Romagnat (63540)</li>
+                <li>Contrat : Stage conventionné</li>
+              </ul>
+            </div>
           </div>
 
+          <!-- Colonne Restauration -->
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Expérience Professionel en Restauration</h3>
+            <h3 class="resume-title">Expérience en Restauration</h3>
 
             <div class="resume-item">
               <h4>Pizzaiolo en Camping</h4>
-              <h5>fin juin à fin août 2023</h5>
-              <p class="text-indent"><em>Lors de mon expérience en tant que pizzaiolo dans un camping, j’assurais l’ensemble du processus de production et de service des pizzas. Je préparais les ingrédients, confectionnais les pizzas à la demande, et gérais leur cuisson dans un environnement souvent rythmé par l’affluence. Pendant le service, je coordonnais étroitement avec le bar pour fluidifier les commandes et servais directement les clients, tout en veillant à leur satisfaction. En fin de soirée, je procédais au nettoyage complet du poste de travail et assurais la gestion des stocks et des DLC pour maintenir la qualité et éviter le gaspillage. Ce poste a renforcé mon sens de l’organisation, ma réactivité, et ma rigueur en matière d’hygiène et de gestion des approvisionnements.</em></p>
-              <p><strong><u>Compétences clés :</u></strong> Maîtrise des techniques de préparation et de cuisson (four à gaz),
-                Gestion des flux en période d’affluence et coordination d’équipe,
-                Respect strict des normes d’hygiène et de sécurité alimentaire,
-                Relation client et adaptabilité aux demandes spécifiques,
-                Organisation et gestion des stocks/DLC.
-              </p>
+              <h5>Fin juin à fin août 2023</h5>
+              <p class="text-indent"><em>Gestion complète de la production et du service des pizzas. Préparation des ingrédients, confection à la demande et gestion de la cuisson dans un contexte de forte affluence. Coordination avec l'équipe de salle et respect rigoureux des règles d'hygiène et des stocks/DLC.</em></p>
+              <p><strong class="key-skills-title">Compétences clés :</strong> Gestion des flux en période d’affluence, respect strict des normes HACCP, réactivité et adaptabilité.</p>
               <ul>
-                <li>Employeur : Camping Huttopia (Lac d'Uby, Cazaubon, 32150)</li>
-                <li>Contrat : CDD</li>
+                <li>Employeur : Camping Huttopia (Cazaubon, 32150)</li>
+                <li>Contrat : CDD Saisonnier</li>
               </ul>
-            </div><!-- End Resume Item -->
-
-            <div class="resume-item">
-              <h4>Auberge de la Gargouille <span class="text-muted">(Saint-Amant-Tallende, 63420)</span></h4>
-              <div class="resume-item">
-              <h4>Second de Cuisine</h4>
-              <h5>fin juin à fin août 2022</h5>
-              <p class="text-indent"><em>En tant que seconde de cuisine, j’ai assuré le bon fonctionnement du poste de production en appui au chef. Mes responsabilités incluaient la préparation des plats et la gestion des stocks. J’ai également participé à la gestion des stocks, et au contrôle des DLC, tout en veillant à la qualité des préparations et à la satisfaction des clients. Ce poste a renforcé ma capacité à encadrer, mon sens de l’organisation, et ma réactivité dans un environnement exigeant.</em></p>
-              <ul>
-                <li>Contrat : CDD</li>
-              </ul>
-            </div><!-- End Resume Item -->
-
-            <div class="resume-item">
-              <h4>Plongeur</h4>
-              <h5>fin juin à fin août 2021</h5>
-              <p class="text-indent"><em>En tant que plongiste en cuisine, j’étais chargé de l’entretien et du nettoyage approfondi des espaces de production culinaire, ainsi que de la gestion des équipements et des déchets.J'ai participé au rangement des stocks, en veillant au respect des règles de sécurité alimentaire et des dates limites de consommation (DLC). Ce poste m’a permis de développer une grande rigueur, un sens aigu de l’organisation, et une capacité à travailler efficacement en équipe dans un environnement dynamique.</em></p>
-              <p><strong><u>Compétences clés :</u></strong> Nettoyage et désinfection des espaces, équipements et ustensiles de cuisine,
-                Respect strict des règles d’hygiène et de sécurité alimentaire,
-                Gestion des déchets et tri sélectif,
-                Organisation et rangement des stocks (rotation, DLC).,
-                Travail en équipe et réactivité en période d’affluence,
-                Utilisation des produits et équipements de nettoyage en toute sécurité,
-                Adaptabilité aux horaires décalés et aux rythmes soutenus.
-              </p>
-              <ul>
-                <li>Contrat : CDD</li>
-              </ul>
-            </div><!-- End Resume Item -->
             </div>
 
-            
+            <div class="resume-item">
+              <h4>Second de Cuisine — Auberge de la Gargouille</h4>
+              <h5>Fin juin à fin août 2022</h5>
+              <p class="text-indent"><em>En appui au chef de cuisine : préparation des plats, contrôle qualité des préparations, gestion des stocks et respect rigoureux des DLC dans un environnement exigeant.</em></p>
+              <ul>
+                <li>Lieu : Saint-Amant-Tallende (63420)</li>
+                <li>Contrat : CDD Saisonnier</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Plongeur &amp; Aide Cuisine — Auberge de la Gargouille</h4>
+              <h5>Fin juin à fin août 2021</h5>
+              <p class="text-indent"><em>Entretien et désinfection approfondie des espaces de production culinaire, gestion des déchets, tri sélectif et assistance au rangement des approvisionnements en respectant les normes d'hygiène.</em></p>
+              <p><strong class="key-skills-title">Compétences clés :</strong> Rigueur, endurance, sens aigu de l’organisation et réactivité en équipe.</p>
+              <ul>
+                <li>Lieu : Saint-Amant-Tallende (63420)</li>
+                <li>Contrat : CDD Saisonnier</li>
+              </ul>
+            </div>
           </div>
         </div>
 
+        <div class="row mt-4">
+          <div class="col-12">
+            <p class="text-indent text-muted">
+              J’ai saisi l’opportunité de multiplier les expériences professionnelles, souvent sous forme de missions courtes ou saisonnières, afin de découvrir concrètement le monde du travail tout en poursuivant mes études. Ces expériences m’ont permis d’acquérir une diversité de compétences pratiques, de me familiariser avec les exigences et les rythmes du milieu professionnel, et de financer mes projets personnels et académiques. Cette approche m’a offert une immersion progressive dans la vie active, tout en me permettant de concilier travail et formation pour construire un parcours à la fois riche et équilibré.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="container section-title" data-aos="fade-up">
-        
-      </div>
-      <div class="container section-title" data-aos="fade-up">
-        <p class="text-indent">J’ai saisi l’opportunité de multiplier les expériences professionnelles, souvent sous forme de missions courtes ou saisonnières, afin de découvrir concrètement le monde du travail tout en poursuivant mes études. Ces expériences m’ont permis d’acquérir une diversité de compétences pratiques, de me familiariser avec les exigences et les rythmes du milieu professionnel, et de financer mes projets personnels et académiques. Cette approche m’a offert une immersion progressive dans la vie active, tout en me permettant de concilier travail et formation pour construire un parcours à la fois riche et équilibré.</p>
-      </div>
+    </section>
 
-    </section><!-- /Resume Section -->
-
-    <!-- Services Section -->
+    <!-- ==============================================================
+         Section Projets (#portfolio)
+         Cartes de projets avec layout moderne et liens accessibles
+         ============================================================== -->
     <section id="portfolio" class="services section">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Projects</h2>
-        <p>Grâce aux opportunités offertes par mon institut de formation, ainsi qu’à l’accompagnement d’associations, j’ai pu concrétiser plusieurs projets qui ont marqué mon développement personnel et professionnel. Ces expériences m’ont permis d’acquérir des compétences variées, de renforcer mon autonomie et de m’engager dans des initiatives porteuses de sens, tout en consolidant mon projet de carrière.</p>
-      </div><!-- End Section Title -->
+        <h2>Projets</h2>
+        <p>Grâce aux opportunités offertes par mon institut de formation ainsi qu’à l’accompagnement d’associations, j’ai pu concrétiser plusieurs projets qui ont marqué mon développement personnel et professionnel. Ces expériences m’ont permis d’acquérir des compétences variées, de renforcer mon autonomie et de m’engager dans des initiatives technologiques concrètes.</p>
+      </div>
 
       <div class="container">
-
         <div class="row gy-4">
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
+            <div class="icon flex-shrink-0"><i class="bi bi-briefcase" aria-hidden="true"></i></div>
             <div>
               <h4 class="title"><a href="projects/concour-fanuc.html" class="stretched-link">Concours FANUC</a></h4>
-              <p class="description">Présentation du projet Concours FANUC.</p>
+              <p class="description">Automatisation et pilotage CNC d'une sertisseuse industrielle de cadres de fenêtres (6e prix national).</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
+            <div class="icon flex-shrink-0"><i class="bi bi-card-checklist" aria-hidden="true"></i></div>
             <div>
               <h4 class="title"><a href="projects/concour-olympiade-physique.html" class="stretched-link">Concours Olympiade Physique</a></h4>
-              <p class="description">Résumé court du concours olympiade Physique.</p>
+              <p class="description">Projet expérimental et démarche scientifique appliquée primés lors du concours des Olympiades.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon flex-shrink-0"><i class="bi bi-robot"></i></div>
+            <div class="icon flex-shrink-0"><i class="bi bi-robot" aria-hidden="true"></i></div>
             <div>
               <h4 class="title"><a href="projects/robot-suiveur-ligne.html" class="stretched-link">Robot suiveur de ligne</a></h4>
-              <p class="description">Robot autonome suiveur de trajectoire — capteurs et asservissements.</p>
+              <p class="description">Robot mobile autonome suiveur de trajectoire avec capteurs infrarouges et asservissement PID.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
+            <div class="icon flex-shrink-0"><i class="bi bi-binoculars" aria-hidden="true"></i></div>
             <div>
               <h4 class="title"><a href="projects/maintenance-moteur-vr.html" class="stretched-link">Maintenance de moteur (VR)</a></h4>
-              <p class="description">Expérience maintenance / simulation VR du fonctionnement moteur.</p>
+              <p class="description">Application immersive de maintenance et de simulation du fonctionnement moteur en Réalité Virtuelle.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
+            <div class="icon flex-shrink-0"><i class="bi bi-brightness-high" aria-hidden="true"></i></div>
             <div>
               <h4 class="title"><a href="projects/renovation-maquette-machine.html" class="stretched-link">Rénovation maquette machine industrielle</a></h4>
-              <p class="description">Rénovation et modernisation d'une maquette de machine.</p>
+              <p class="description">Rétrofit complet, recâblage et programmation d'une maquette pédagogique industrielle.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
-            <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
+            <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week" aria-hidden="true"></i></div>
             <div>
               <h4 class="title"><a href="projects/maquette-tourelle-balistique.html" class="stretched-link">Maquette tourelle balistique</a></h4>
-              <p class="description">Prototype et contrôle d'une tourelle balistique en maquette.</p>
+              <p class="description">Conception mécatronique, vision OpenCV et asservissement Pan &amp; Tilt d'une tourelle balistique.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon flex-shrink-0"><i class="bi bi-robot"></i></div>
+            <div class="icon flex-shrink-0"><i class="bi bi-robot" aria-hidden="true"></i></div>
             <div>
               <h4 class="title"><a href="projects/mini-robot-humanoide.html" class="stretched-link">Mini robot humanoïde</a></h4>
-              <p class="description">Mini humanoïde : mécatronique, servo, et contrôle.</p>
+              <p class="description">Prototypage mécatronique, cinématique directe et asservissement multi-servomoteurs.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon flex-shrink-0"><i class="bi bi-scissors"></i></div> <!-- J'ai changé l'icône pour s'adapter au textile/machine -->
+            <div class="icon flex-shrink-0"><i class="bi bi-scissors" aria-hidden="true"></i></div>
             <div>
               <h4 class="title"><a href="projects/brodeuse.html" class="stretched-link">Projet de Synthèse — Brodeuse Numérique CNC</a></h4>
-              <p class="description">Projet en cours : Rétrofit d'une machine à coudre en brodeuse CNC 2 axes.</p>
+              <p class="description">Rétrofit mécatronique d'une machine à coudre en brodeuse CNC 2 axes synchronisée par capteur optique.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon flex-shrink-0"><i class="bi bi-arrow-repeat"></i></div>
+            <div class="icon flex-shrink-0"><i class="bi bi-arrow-repeat" aria-hidden="true"></i></div>
             <div>
-              <h4 class="title"><a href="projects/pipeline-VGGT.html" class="stretched-link">Pipeline de Pré-traitement d'Images pour l'Architecture VGGT</a></h4>
-              <p class="description"></p>
+              <h4 class="title"><a href="projects/pipeline-VGGT.html" class="stretched-link">Pipeline de Pré-traitement VGGT (Stage M1)</a></h4>
+              <p class="description">Extraction multi-capteurs (ROS 2), filtrage cinématique odométrique, correction optique de Mei et sélection LoFTR pour VGGT sur navette autonome.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon flex-shrink-0"><i class="bi bi-robot"></i></div>
+            <div class="icon flex-shrink-0"><i class="bi bi-robot" aria-hidden="true"></i></div>
             <div>
               <h4 class="title"><a href="projects/robot-humanoide.html" class="stretched-link">Robot humanoïde</a></h4>
-              <p class="description">Projet complet robot humanoïde — asservissement et IA embarquée.</p>
+              <p class="description">Projet complet de robot humanoïde : mécatronique, asservissement dynamique et IA embarquée.</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
         </div>
-
       </div>
-    </section><!-- /Services Section -->
-
+    </section>
 
   </main>
-  
+
+  <!-- ==============================================================
+       Pied de Page (#footer)
+       ============================================================== -->
   <footer id="footer" class="footer position-relative light-background">
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved</span></p>
-      </div>
+    <div class="container text-center">
+      <p class="copyright">© <span>Romaric Pradeau</span> — Tous droits réservés</p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+        Portfolio d'Ingénierie, Automatique &amp; Robotique
       </div>
     </div>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Bouton Scroll Top accessible -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Retour en haut de page"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+  <!-- Preloader moderne -->
+  <div id="preloader" aria-hidden="true"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <!-- ==============================================================
+       Scripts JS (avec attribut defer pour éviter de bloquer le parsing DOM)
+       Uniquement les bibliothèques utilisées par le site
+       ============================================================== -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 
 </body>
 
